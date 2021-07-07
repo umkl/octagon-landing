@@ -1,5 +1,4 @@
-font: Poppins
-
+font: Poppins, Montserrat 
 colors:
 main: 1000BA,
 base: 000000,
