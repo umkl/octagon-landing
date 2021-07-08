@@ -3,4 +3,12 @@ colors:
 main: 1000BA,
 base: 000000,
 extra: 558C8C,
+
+measurements:
+Buttons:
+Height:
+Width: dynamiic
+Corner-radius: 20dp
+Corner-smoothing: 100%
+
 grey-background-items-temp: 8693AB
