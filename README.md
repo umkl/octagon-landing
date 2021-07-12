@@ -1,2 +1,4 @@
 # Octagon-landing
-🚀 Landing page for the restaurant Octagon in Vienna.
+🚀 Landing page for Octagon.
+
+> coming soon
