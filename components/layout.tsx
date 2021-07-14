@@ -3,17 +3,21 @@ import Image from 'next/image'
 import styles from './layout.module.scss'
 import utilStyles from '../styles/utils.module.scss'
 import Link from 'next/link'
+import { ReactNode } from 'react'
+import Footer from './footer';
 
 const name = 'Michael Ungar'
 export const siteTitle = 'Next.js Sample Website'
 
+interface ILayout {
+  children: ReactNode;
+  home?: boolean
+}
+
 export default function Layout({
   children,
   home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
+}: ILayout) {
   return (
     <div className={styles.container}>
       <Head>
@@ -67,13 +71,19 @@ export default function Layout({
         )}
       </header>
       <main>{children}</main>
-      {!home && (
+      <footer>
+      {/* <Footer>
+
+      </Footer> */}
+      </footer>
+      {/* {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
-      )}
+      )} */}
+
     </div>
   )
 }
