@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './layout.module.scss'
-import utilStyles from '../styles/utils.module.scss'
+import utilStyles from '../../styles/components/utils.module.scss'
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import Footer from './footer';
+import Footer from '../modules/footer';
 
 const name = 'Michael Ungar'
 export const siteTitle = 'Next.js Sample Website'
