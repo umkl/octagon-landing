@@ -18,7 +18,15 @@
     $color: replace(''+$color+'', '#', '%23');
     $halfWidth: $width / 2;
     $halfHeight: $height / 2;
-    background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg version='1.1' id='rectangle' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='"+$width+"' height='"+$height+"' viewBox='0 0 "+$width+" "+$height+"' enable-background='new 0 0 "+$width+" "+$height+"' xml:space='preserve'%3E%3Cpath fill='"+$color+"' stroke='none' d='M 0,"+$halfHeight+" C 0,0 0,0 "+$halfWidth+",0 S "+$width+",0 "+$width+","+$halfHeight+" "+$width+","+$height+" "+$halfWidth+","+$height+" 0,"+$height+" 0,"+$halfHeight+"'%3E%3C/path%3E%3C/svg%3E");
+    background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg version='1.1' id='rectangle' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='"+$width+"' height='"+$height+"' viewBox='0 0 "+$width+" "+$height+"' enable-background='new 0 0 "+$width+" "+$height+"' xml:space='preserve'%3E%3Cpath fill='"+$color+"' stroke='none' d='M 0,"+$halfHeight+
+    "C 0,0 0,0 "+$halfWidth+",0 "+ 
+    "S "+$width+",0 "+$width+","+$halfHeight+
+    " "+$width+","
+    +$height+" "+$halfWidth+","
+    +$height+" 0,"
+    +$height+" 0,"
+    +$halfHeight+
+    "'%3E%3C/path%3E%3C/svg%3E");
     background-size: #{$width + 'px'} #{$height + 'px'};
     background-repeat: no-repeat;
 }

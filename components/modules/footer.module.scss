@@ -1,0 +1,27 @@
+@use './../../styles/abstracts/' as i;
+
+.container{
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    // background-color: i.$pr_color;
+    background: url(/Footer-section-background-1000BA.svg);
+    background-size: cover;
+    .innerContainer{
+        background-color: red;
+        width: 400px;
+        height: 400px;
+        // width: 90%;
+        // height: 90%;
+        // background-color: white;
+        position: relative;
+        // border-radius: 20px;
+        @include i.center;
+        // $w: 500px;
+        // $h: 500px;
+        // $c: white;
+        // width: $w;
+        // height: $h;
+        // @include i.super-rectangle($w, $h, $c);
+    }
+}

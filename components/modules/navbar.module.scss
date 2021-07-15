@@ -1,49 +1,91 @@
 @use './../../styles/abstracts/' as i;
 
-.container{
-    width: 100%;
-    background-color: red;
+.container {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    height: 180px;
+    min-width: 180px;
+    margin: 0 10px;
+  }
+
+  .navigator {
     display: flex;
-    justify-content: space-between;
-    .logo{
-        height: 100px;
-        width: 100px;
-        margin: 0 40px;
-    }
-    .navigator{
+    justify-content: center;
+    font-family: i.$main_font;
+    font-weight: i.$main_font_weight_700;
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 30px;
+      ul {
+        align-items: center;
+        align-content: center;
         display: flex;
-        justify-content: center;
-        .wrapper{
-            display: flex;
-            ul{
-                background-color: red;
-                align-items: center;
-                align-content: center;
-                display: flex;
-                flex-direction: row;
-                list-style-type: none;
-                .pagenavigators{
-                    margin: 10px; 
-                    height: fit-content;
-                    width: 100px;
-                    background-color: aqua;
-                }
-            }
-            .contact{
-                $w: 400px;
-                $h: 400px;
-                $c: #ED2F5B;
-                width: $w;
-                height: $h;
-                @include i.super-rectangle( $w, $h, $c);
-                @include i.shadow-plain( $w, $h, black);
-            }
+        margin: i.$nav_margin;
+        flex-direction: row;
+        list-style-type: none;
+        .pagenavigators {
+          cursor: pointer;
+          height: 40px;
+          width: 90px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
+      }
+      .contact {
+        cursor: pointer;
+        // box-shadow: 0px 0px 10px 10px i.$pr_color;
+        margin: 0 0 0 10px;
         
-        background-color: green;
         
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        $w: 100px;
+        $h: 40px;
+        $c: i.$pr_color;
+        width: $w;
+        height: $h;
+        @include i.super-rectangle($w, $h, $c);
+        // @include i.shadow-plain( $w, $h, black);
+      }
     }
+  }
 }
 
+.container_small {
+  // background-color: red;
+  // height: fit-content;
+  height: 90px;
+  @include i.media("<phone") {
+    width: 300px;
+  }
 
+  display: flex;
+  justify-content: space-between;
+  .logo_small {
+    height: 50px;
+    width: 50px;
+    margin: 30px;
+    @include i.media("<=tablet") {
+      height: 30px;
+      width: 30px;
+    }
+  }
 
+  .menuicon {
+    height: 50px;
+    width: 50px;
+    margin: 30px;
+    @include i.media("<=tablet") {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
