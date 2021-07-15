@@ -1,4 +1,4 @@
-@use './../../styles/abstracts/' as i;
+@use './../../styles/abstracts' as i;
 
 
 // @include i.media(">=desktop") {
@@ -6,9 +6,13 @@
 // }
 
 .container {
-  // max-width: 36rem;
-  width: 100%;
+  
+  width: 1000px;
   height: 100%;
+
+  // max-width: 36rem;
+  @include i.centerX;
+  position:relative;
   // padding: 0 1rem;
   // margin: 3rem auto 6rem;
   background-color: white; 
