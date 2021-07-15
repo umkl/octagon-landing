@@ -16,6 +16,7 @@ interface ILayout {
 }
 
 export default function Layout({ children, home }: ILayout) {
+  console.log(styles.okvariable);
   return (
     <div className={styles.container}>
       <Head>
