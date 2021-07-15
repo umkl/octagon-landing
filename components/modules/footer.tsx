@@ -5,11 +5,11 @@
 // }
 
 const footer = ():JSX.Element => {
-    return (<>
-        <div>
-            
-        </div>
-    </>)
+    return (
+        <footer>
+
+        </footer>
+    )
 }
 
 export default footer;

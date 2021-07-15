@@ -1,27 +1,25 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.scss'
-import utilStyles from '../../styles/components/utils.module.scss'
-import Link from 'next/link'
-import { ReactNode } from 'react'
-import Footer from '../modules/footer';
+import Head from "next/head";
+import Image from "next/image";
+import styles from "./layout.module.scss";
+import utilStyles from "../../styles/utils.module.scss";
+import Link from "next/link";
+import { ReactNode } from "react";
+import Footer from "../modules/footer";
+import Navbar from "../modules/navbar";
 
-const name = 'Michael Ungar'
-export const siteTitle = 'Next.js Sample Website'
+const name = "Michael Ungar";
+export const siteTitle = "Next.js Sample Website";
 
 interface ILayout {
   children: ReactNode;
-  home?: boolean
+  home?: boolean;
 }
 
-export default function Layout({
-  children,
-  home
-}: ILayout) {
+export default function Layout({ children, home }: ILayout) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -33,10 +31,13 @@ export default function Layout({
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" /> */}
       </Head>
-      <header className={styles.header}>
-        {home ? (
+
+      <Navbar/>
+
+      {/* <header className={styles.header}> */}
+        {/* {home ? (
           <>
             <Image
               priority
@@ -68,14 +69,13 @@ export default function Layout({
               </Link>
             </h2>
           </>
-        )}
-      </header>
-      <main>{children}</main>
-      <footer>
-      {/* <Footer>
+        )} */}
 
-      </Footer> */}
-      </footer>
+
+      {/* </header> */}
+
+      <main>{children}</main>
+      <Footer/>
       {/* {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
@@ -83,7 +83,6 @@ export default function Layout({
           </Link>
         </div>
       )} */}
-
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-@use '../abstracts' as i;
+@use './abstracts/index' as i;
 
 .heading2Xl {
   font-size: 2.5rem;
@@ -6,6 +6,7 @@
   font-weight: 800;
   letter-spacing: -0.05rem;
   margin: 1rem 0;
+  font-family: i.$main_font;
 }
 
 .headingXl {
@@ -14,42 +15,45 @@
   font-weight: 800;
   letter-spacing: -0.05rem;
   margin: 1rem 0;
+  font-family: i.$main_font;
 }
 
 .headingLg {
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 1rem 0;
+  font-family: i.$main_font;
 }
 
 .paragraph{
-  font-family: i.$main_font;
   font-weight: 900;
   font-size: 1rem;
+  font-family: i.$main_font;
 }
 
 .headingMd {
+  font-family: i.$main_font;
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
-.borderCircle {
-  border-radius: 9999px;
-}
+// .borderCircle {
+//   border-radius: 9999px;
+// }
 
-.colorInherit {
-  color: inherit;
-}
+// .colorInherit {
+//   color: inherit;
+// }
 
-.padding1px {
-  padding-top: 1px;
-}
+// .padding1px {
+//   padding-top: 1px;
+// }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+// .list {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+// }
 
 .listItem {
   margin: 0 0 1.25rem;

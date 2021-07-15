@@ -1,0 +1,11 @@
+@use './../../styles/abstracts/' as i;
+
+.container{
+    width: 100%;
+    background-color: red;
+}
+
+.logo{
+    height: 40px;
+    width: 40px;
+}
