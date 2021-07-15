@@ -2,15 +2,16 @@
 
 .container{
     width: 100%;
-    position: absolute;
-    height: 100vh;
+    height: 2000px;
+    position: relative;
     // background-color: i.$pr_color;
     background: url(/Footer-section-background-1000BA.svg);
     background-size: cover;
+    // background-color: green;
     .innerContainer{
-        background-color: red;
-        width: 400px;
-        height: 400px;
+        // background-color: red;
+        width: 90%;
+        height: 95%;
         // width: 90%;
         // height: 90%;
         // background-color: white;
