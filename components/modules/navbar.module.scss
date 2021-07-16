@@ -41,18 +41,22 @@
         cursor: pointer;
         // box-shadow: 0px 0px 10px 10px i.$pr_color;
         margin: 0 0 0 10px;
-        
-        
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
+        position:relative;
         $w: 100px;
         $h: 40px;
         $c: i.$pr_color;
         width: $w;
         height: $h;
-        @include i.super-rectangle($w, $h, $c);
+      
+          
+          
+          // @include i.center;
+        
+        // @include i.super-rectangle($w, $h, $c);
         // @include i.shadow-plain( $w, $h, black);
       }
     }

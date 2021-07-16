@@ -3,3 +3,7 @@ $contrast_black: #000000;
 $se_blue: #81A6BD;
 $gray: #BABABA;
 $gray_text: #818181;
+
+:export{
+    pr_color: $pr_color;
+}

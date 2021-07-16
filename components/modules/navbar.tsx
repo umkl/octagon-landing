@@ -8,9 +8,9 @@ import Link from "next/link";
 import { useSpring, animated as a } from "react-spring";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
 import { useContext, useEffect, useRef, useState } from "react";
-import useResizeObserver from './../../hooks/useObserver';
-import {NavbarHeightContext} from './../layouts/layout';
-
+import useResizeObserver from "./../../hooks/useObserver";
+import { NavbarHeightContext } from "./../layouts/layout";
+import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
 
 interface ILayout {
   dark?: boolean;
@@ -20,16 +20,18 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
   const [isLoaded, setLoaded] = useState<boolean>(false);
   const navRef = useRef(null);
 
-  const {NavbarHeight,setNavbarHeight} = useContext(NavbarHeightContext);
+  const { NavbarHeight, setNavbarHeight } = useContext(NavbarHeightContext);
+
+  const styles = useSpring({ opacity: isLoaded ? 1 : 0 });
 
   const heightCallback = () => {
-    try{
+    try {
       setNavbarHeight(navRef.current.clientHeight);
-    }catch(e){
+    } catch (e) {
       console.log("null error");
     }
-  }
-  useResizeObserver({callback: heightCallback, element: navRef});
+  };
+  useResizeObserver({ callback: heightCallback, element: navRef });
   useEffect(() => {
     setLoaded(true);
   }, []);
@@ -49,7 +51,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
 
   return (
     <div className="navbar" ref={navRef}>
-      {size.width > parseInt(utilStyles.tabletsize)-100 ? (
+      {size.width > parseInt(utilStyles.tabletsize) - 100 ? (
         <header className={navStyles.container}>
           <>
             <div className={navStyles.logo}>
@@ -85,7 +87,21 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                     });
                   }}
                 >
-                  Contact
+                  <SuperEllipse
+                    r1={0.03}
+                    r2={0.5}
+                    style={{
+                      height: "40px",
+                      width: "100px",
+                      backgroundColor: navStyles.pr_color,
+                      boxShadow: "0px 0px 10px 10px black",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span>Contact</span>
+                  </SuperEllipse>
                 </div>
               </div>
             </div>
