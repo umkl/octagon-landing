@@ -4,7 +4,7 @@ import Layout, { siteTitle } from "../components/layouts/layout";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout home>
+    <Layout>
       <Component {...pageProps} />
     </Layout>
   );

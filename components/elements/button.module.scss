@@ -1,0 +1,15 @@
+@use './../../styles/abstracts/index' as i;
+
+.text{
+    color: white;
+    font-weight: i.$main_font_weight_700
+}
+
+.shadow{
+    height: 40px;
+    width: 160px;
+    background-color: red;
+    position: absolute;
+    filter: url(#svg-blur);
+
+}

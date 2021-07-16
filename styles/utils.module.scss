@@ -6,66 +6,15 @@
   desktopsize: map-get(i.$breakpoints, 'desktop');
 }
 
-.heading2Xl {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+.heading1{
+  font-size: 50px;
+  line-height: 50px;
+  color: black;
   font-family: i.$main_font;
 }
 
-.headingXl {
-  font-size: 2rem;
-  line-height: 1.3;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+.text1{
+  font-size: 25px;
+  line-height: 30px;
   font-family: i.$main_font;
-  
-}
-
-.headingLg {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 1rem 0;
-  font-family: i.$main_font;
-}
-
-.paragraph{
-  font-weight: 900;
-  font-size: 1rem;
-  font-family: i.$main_font;
-}
-
-.headingMd {
-  font-family: i.$main_font;
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
-// .borderCircle {
-//   border-radius: 9999px;
-// }
-
-// .colorInherit {
-//   color: inherit;
-// }
-
-// .padding1px {
-//   padding-top: 1px;
-// }
-
-// .list {
-//   list-style: none;
-//   padding: 0;
-//   margin: 0;
-// }
-
-.listItem {
-  margin: 0 0 1.25rem;
-}
-
-.lightText {
-  color: #666;
 }

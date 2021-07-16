@@ -1,28 +1,132 @@
 @use './../../styles/abstracts/' as i;
 
+$phonesize: map-get(i.$breakpoints, 'phone');
+
 .container{
     width: 100%;
-    height: 2000px;
+    height: 1000px;
+    margin-bottom: -10px;
     position: relative;
+    white-space: nowrap;
     // background-color: i.$pr_color;
     background: url(/Footer-section-background-1000BA.svg);
     background-size: cover;
-    // background-color: green;
+    @include i.media("<=phone"){
+        width: $phonesize;
+    }
     .innerContainer{
-        // background-color: red;
         width: 90%;
         height: 95%;
-        // width: 90%;
-        // height: 90%;
-        // background-color: white;
         position: relative;
-        // border-radius: 20px;
         @include i.center;
-        // $w: 500px;
-        // $h: 500px;
-        // $c: white;
-        // width: $w;
-        // height: $h;
-        // @include i.super-rectangle($w, $h, $c);
+        .content{
+            position: absolute;
+            width: 90%;
+            margin-top: 30px;
+            height: 100%;
+            @include i.centerX;
+            .blockheading{
+                padding: 0;
+                margin: 10px 0 20px 0;
+                // background-color: red;
+                font-size: 1.5em;
+                // background-color: red;
+                // margin-top: 30px;
+            }
+            .block1{
+                display: flex;
+                @include i.media("<=tablet"){
+                    flex-direction: column;
+                }
+                // background-color: red;
+                // background-color: red;
+                .half{
+                    width: 250px;
+                    margin: 0 40px 0 0;
+                }
+            }
+            .block2{
+                margin: 30px 0;
+            }
+            .block3{
+                @include i.media("<=tablet"){
+                    flex-direction: column;
+                }
+                display: flex;
+                .half{
+                    width: 250px;
+                    margin: 0 40px 0 0;
+                    p{
+                        &:hover{
+                            cursor: pointer;
+                            color: i.$pr_color;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            background-color: red;
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            // flex-direction: column;
+            @include i.media("<=tablet"){
+                justify-content: start;
+            }
+            @include i.media("<=phone"){
+                background-color: yellow;
+                flex-direction: column;
+            }
+            .wrap{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                .logo{
+                    // background-color: red;
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: center;
+                    
+                    margin: 10px;
+                    height: 60px;
+                    width: 60px;
+                }
+                span{
+                    margin: 10px;
+                    color: i.$gray;
+                    min-width: fit-content;
+                }
+            }
+            .privacy{
+                margin: 0;
+                list-style-type: none;
+                display: flex;
+                align-content: center;
+                align-items: center;
+                background-color: blue;
+                height: 100%;
+                flex-direction: row;
+                li{
+                    // margin: 0 10px 0 80px;
+                    width: fit-content;
+                    background-color: green;
+                    white-space: nowrap;
+                    display: block;
+                    a{
+                        width: fit-content;
+                        cursor: pointer;
+                        color: i.$gray;
+                        font-weight: i.$main_font_weight_600;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
     }
 }

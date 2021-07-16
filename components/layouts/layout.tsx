@@ -9,12 +9,8 @@ import Navbar from "../modules/navbar";
 import React from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
 
-const name = "Michael Ungar";
-export const siteTitle = "Next.js Sample Website";
-
 interface ILayout {
   children: ReactNode;
-  home?: boolean;
 }
 
 export const NavbarHeightContext = React.createContext({
@@ -22,35 +18,27 @@ export const NavbarHeightContext = React.createContext({
   setNavbarHeight: (x) => {},
 });
 
-export default function Layout({ children, home }: ILayout) {
+export default function Layout({ children }: ILayout) {
   const [NavbarHeight, setNavbarHeight] = useState(0);
   const size: Size = useWindowSize();
 
   return (
     <>
       <div className={styles.container}>
-        {/* <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <Head>
+        <link rel="icon" href="/Octagon-logo-1000BA.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="5-Star Restaurant in Vienna that supports all Crypto-currencies."
         />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head> */}
-
+        <meta name="og:title" content="Home-Octagon" />
+      </Head>
         <NavbarHeightContext.Provider value={{ NavbarHeight, setNavbarHeight }}>
           <Navbar />
           <main
             className={styles.main}
             style={{
-              height: size.height - NavbarHeight,
+              minHeight: size.height - NavbarHeight,
             }}
           >
             {children}

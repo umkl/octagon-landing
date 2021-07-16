@@ -1,0 +1,24 @@
+@use './../../styles/abstracts/index' as i;
+
+.arrow {
+}
+.section1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    @include i.centerX;
+    
+}
+
+.image1 {
+    right: 0px;
+    top: 50px;
+    height:450px;
+    width: 450px;
+    position: absolute;
+}
+
+.wrapper{
+    width: 50%;
+}
