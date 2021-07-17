@@ -6,10 +6,12 @@ import Detail from "./detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext } from "react";
 import useWindowSize, { Size } from "./../../hooks/useWindowSize";
-import Image1 from "./../../assets/Illustrations/image-plate.svg";
+import Image from 'next/image';
+import Image1 from "../../public/images/image-plate.png";
 import Image2 from "./../../assets/Illustrations/image-home-2-restaurant_eating.svg";
 import Image3 from "./../../assets/Illustrations/image-home-3-crypto.svg";
 import Image4 from "./../../assets/Illustrations/image-home-4-perfect_rating.svg";
+
 
 const Home = (): JSX.Element => {
   const { NavbarHeight } = useContext(NavbarHeightContext);
@@ -35,7 +37,7 @@ const Home = (): JSX.Element => {
           <div className={styles.arrow}></div>
         </div>
         <div className={styles.image1}>
-          <Image1 />
+          <Image width={700} height={500} src={Image1} alt="Octagon-meal-image"/>
         </div>
       </section>
       <Detail

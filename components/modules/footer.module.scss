@@ -38,8 +38,6 @@ $phonesize: map-get(i.$breakpoints, 'phone');
                 @include i.media("<=tablet"){
                     flex-direction: column;
                 }
-                // background-color: red;
-                // background-color: red;
                 .half{
                     width: 250px;
                     margin: 0 40px 0 0;
@@ -66,6 +64,7 @@ $phonesize: map-get(i.$breakpoints, 'phone');
                 }
             }
         }
+
         .bottom{
             background-color: red;
             position: absolute;
@@ -107,17 +106,19 @@ $phonesize: map-get(i.$breakpoints, 'phone');
                 margin: 0;
                 list-style-type: none;
                 display: flex;
+                background-color: rgb(255, 192, 248);
                 align-content: center;
                 align-items: center;
-                background-color: blue;
                 height: 100%;
                 flex-direction: row;
+                width: fit-content;
                 li{
-                    // margin: 0 10px 0 80px;
+                    margin: 0 30px;
                     width: fit-content;
                     background-color: green;
                     white-space: nowrap;
                     display: block;
+
                     a{
                         width: fit-content;
                         cursor: pointer;

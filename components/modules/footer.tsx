@@ -2,6 +2,7 @@ import footerStyle from "./footer.module.scss";
 import SuperEllipse from "react-superellipse";
 import OctagonLogo from "./../../assets/Logo/Octagon-logo-grayed.svg";
 
+
 const footer = (): JSX.Element => {
   return (
     <footer className={footerStyle.container}>
