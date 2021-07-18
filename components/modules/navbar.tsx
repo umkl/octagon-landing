@@ -12,6 +12,7 @@ import useResizeObserver from "./../../hooks/useObserver";
 import { NavActiveContext, NavbarHeightContext } from "./../layouts/layout";
 import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
 import { Link as Link2, animateScroll as scroll } from "react-scroll";
+import Button from "./../elements/button";
 
 interface ILayout {
   dark?: boolean;
@@ -98,7 +99,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                     offset={0}
                     duration={500}
                   >
-                    <SuperEllipse
+                    {/* <SuperEllipse
                       r1={0.03}
                       r2={0.5}
                       style={{
@@ -112,7 +113,15 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                       }}
                     >
                       <span>Contact</span>
-                    </SuperEllipse>
+                    </SuperEllipse> */}
+                    <Button
+                      dark={false}
+                      fontsize="20px"
+                      width={120}
+                      height={40}
+                    >
+                      Contact
+                    </Button>
                   </Link2>
                 </div>
               </div>

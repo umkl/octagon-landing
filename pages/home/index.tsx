@@ -5,7 +5,7 @@ import arrow from "./../../assets/Icons/arrow.svg";
 import Detail from "./detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext } from "react";
-import useWindowSize, { Size } from "./../../hooks/useWindowSize";
+import useWindowSize, { Size } from "../../hooks/useWindowSize";
 import Image from 'next/image';
 import Image1 from "../../public/images/image-plate.png";
 import Image2 from "./../../assets/Illustrations/image-home-2-restaurant_eating.svg";
@@ -36,9 +36,11 @@ const Home = (): JSX.Element => {
           </Button>
           <div className={styles.arrow}></div>
         </div>
+
         <div className={styles.image1}>
           <Image width={700} height={500} src={Image1} alt="Octagon-meal-image"/>
         </div>
+        
       </section>
       <Detail
         teaser="WE OFFER ..."

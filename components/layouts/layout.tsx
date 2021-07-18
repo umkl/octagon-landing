@@ -62,7 +62,7 @@ export default function Layout({ children }: ILayout) {
               <main
                 className={styles.main}
                 style={{
-                  minHeight: size.height - NavbarHeight,
+                  minHeight: size.height - NavbarHeight
                 }}
               >
                 {children}

@@ -10,11 +10,6 @@ interface Props {
   fontsize?: string;
 }
 
-// to="footer"
-//                     spy={true}
-//                     smooth={true}
-//                     offset={0}
-//                     duration={500}
 
 function Button({ dark, children, width, height, fontsize }: Props) {
   return (

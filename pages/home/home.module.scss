@@ -6,9 +6,18 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    // background-color: red;
     width: fit-content;
     @include i.centerX;
-    
+    .wrapper{
+        width: 50%;
+        background-color: red;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        padding-top: 20%;
+        // background-color: purple;
+    }
 }
 
 .image1 {
@@ -19,6 +28,3 @@
     position: absolute;
 }
 
-.wrapper{
-    width: 50%;
-}
