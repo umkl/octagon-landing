@@ -9,8 +9,9 @@ import { useSpring, animated as a } from "react-spring";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
 import { useContext, useEffect, useRef, useState } from "react";
 import useResizeObserver from "./../../hooks/useObserver";
-import { NavbarHeightContext } from "./../layouts/layout";
+import { NavActiveContext, NavbarHeightContext } from "./../layouts/layout";
 import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
+import { Link as Link2, animateScroll as scroll } from "react-scroll";
 
 interface ILayout {
   dark?: boolean;
@@ -18,9 +19,15 @@ interface ILayout {
 
 const Navbar = ({ dark }: ILayout): JSX.Element => {
   const [isLoaded, setLoaded] = useState<boolean>(false);
+  const size: Size = useWindowSize();
   const navRef = useRef(null);
+  const FullNavbar: boolean =
+    size.width > parseInt(utilStyles.tabletsize) - 100;
 
   const { NavbarHeight, setNavbarHeight } = useContext(NavbarHeightContext);
+  const { NavActive: NavActive, setNavActive: setNavActive } = useContext(
+    NavActiveContext
+  );
 
   const styles = useSpring({ opacity: isLoaded ? 1 : 0 });
 
@@ -43,81 +50,93 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
 
   const [, setY] = useSpring(() => ({ y: 0 }));
 
-  const size: Size = useWindowSize();
-
   const scrollAction = (props): void => {
     return window.scroll(500, props.y);
   };
 
+  const switchNavButtonActive = (): void => {
+    setNavActive(!FullNavbar);
+  };
+
   return (
-    <div className="navbar" ref={navRef}>
-      {size.width > parseInt(utilStyles.tabletsize) - 100 ? (
-        <header className={navStyles.container}>
-          <>
-            <div className={navStyles.logo}>
-              <OctagonLogo />
-            </div>
-            <div className={navStyles.navigator}>
-              <div className={navStyles.wrapper}>
-                <ul>
-                  <Link href="/">
-                    <a>
-                      <li className={navStyles.pagenavigators}>Home</li>
-                    </a>
-                  </Link>
-                  <Link href="/Events">
-                    <a>
-                      <li className={navStyles.pagenavigators}>Events</li>
-                    </a>
-                  </Link>
-                  <Link href="/About">
-                    <a>
-                      <li className={navStyles.pagenavigators}>About</li>
-                    </a>
-                  </Link>
-                </ul>
-                <div
-                  className={navStyles.contact}
-                  style={contactSpring}
-                  onClick={() => {
-                    setY({
-                      y: 500,
-                      reset: true,
-                      from: { y: window.scrollY },
-                    });
-                  }}
-                >
-                  <SuperEllipse
-                    r1={0.03}
-                    r2={0.5}
-                    style={{
-                      height: "40px",
-                      width: "100px",
-                      backgroundColor: navStyles.pr_color,
-                      boxShadow: "0px 0px 10px 10px black",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
+    <>
+      <div className="navbar" ref={navRef}>
+        {FullNavbar ? (
+          <header className={navStyles.container}>
+            <>
+              <div className={navStyles.logo}>
+                <Link href="/">
+                  <a>
+                    <OctagonLogo />
+                  </a>
+                </Link>
+              </div>
+              <div className={navStyles.navigator}>
+                <div className={navStyles.wrapper}>
+                  <ul>
+                    <Link href="/">
+                      <a>
+                        <li className={navStyles.pagenavigators}>Home</li>
+                      </a>
+                    </Link>
+                    <Link href="/Events">
+                      <a>
+                        <li className={navStyles.pagenavigators}>Events</li>
+                      </a>
+                    </Link>
+                    <Link href="/About">
+                      <a>
+                        <li className={navStyles.pagenavigators}>About</li>
+                      </a>
+                    </Link>
+                  </ul>
+                  <Link2
+                    className={navStyles.contact}
+                    to="footer"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
                   >
-                    <span>Contact</span>
-                  </SuperEllipse>
+                    <SuperEllipse
+                      r1={0.03}
+                      r2={0.5}
+                      style={{
+                        height: "40px",
+                        width: "100px",
+                        backgroundColor: navStyles.pr_color,
+                        boxShadow: "0px 0px 10px 10px black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <span>Contact</span>
+                    </SuperEllipse>
+                  </Link2>
                 </div>
               </div>
+            </>
+          </header>
+        ) : (
+          <header className={navStyles.container_small}>
+            <div className={navStyles.logo_small}>
+              <Link href="/">
+                <a>
+                  <SmallOctagonLogo />
+                </a>
+              </Link>
             </div>
-          </>
-        </header>
-      ) : (
-        <header className={navStyles.container_small}>
-          <div className={navStyles.logo_small}>
-            <SmallOctagonLogo />
-          </div>
-          <div className={navStyles.menuicon}>
-            {!dark ? <Menu /> : <Menu_Dark />}
-          </div>
-        </header>
-      )}
-    </div>
+            <div
+              className={navStyles.menuicon}
+              onClick={() => switchNavButtonActive()}
+            >
+              {!dark ? <Menu /> : <Menu_Dark />}
+            </div>
+          </header>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -13,6 +13,14 @@
   font-family: i.$main_font;
 }
 
+@mixin navHeading{
+  font-size: 40px;
+  line-height: 50px;
+  font-family: i.$main_font;
+  color: black;
+  font-weight: i.$main_font_weight_700;
+}
+
 .text1{
   font-size: 25px;
   line-height: 30px;

@@ -1,5 +1,5 @@
 @use './../../styles/abstracts/' as i;
-
+@use './../../styles/utils.module.scss' as u;
 .container {
   width: 100%;
   height: 180px;
@@ -45,15 +45,15 @@
         align-items: center;
         justify-content: center;
         color: white;
-        position:relative;
+        position: relative;
         $w: 100px;
         $h: 40px;
         $c: i.$pr_color;
         width: $w;
         height: $h;
-    
-          // @include i.center;
-        
+
+        // @include i.center;
+
         // @include i.super-rectangle($w, $h, $c);
         // @include i.shadow-plain( $w, $h, black);
       }
@@ -62,26 +62,24 @@
 }
 
 .container_small {
-  // background-color: red;
-  // height: fit-content;
   height: 90px;
   @include i.media("<phone") {
     width: 300px;
   }
-
   display: flex;
   justify-content: space-between;
   .logo_small {
     height: 50px;
     width: 50px;
     margin: 30px;
+    cursor: pointer;
     @include i.media("<=tablet") {
       height: 30px;
       width: 30px;
     }
   }
-
   .menuicon {
+    cursor:pointer;
     height: 50px;
     width: 50px;
     margin: 30px;
@@ -89,5 +87,46 @@
       height: 30px;
       width: 30px;
     }
+  }
+}
+
+.navblock {
+  height: 500px;
+  width: 80%;
+  position: fixed;
+  left: 50%;
+  max-width: 500px;
+  transform:translateX(-50%);
+  z-index: 1000;
+  .navElements{
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // flex-direction: column;
+    // display: flex;
+    // align-items: center;
+    // list-style: none;
+    // justify-content: center;
+    
+    .navElement{
+      cursor:pointer;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include u.navHeading;
+    }
+  }
+  .shadow{
+    background-color: rgba(0, 0, 0, 0.243);
+    height: 95%;
+    width: 95%;
+    border-radius: 20px;
+    @include i.center;
+    filter: blur(20px);
+    position: relative;
   }
 }

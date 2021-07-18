@@ -2,10 +2,9 @@ import footerStyle from "./footer.module.scss";
 import SuperEllipse from "react-superellipse";
 import OctagonLogo from "./../../assets/Logo/Octagon-logo-grayed.svg";
 
-
 const footer = (): JSX.Element => {
   return (
-    <footer className={footerStyle.container}>
+    <footer className={footerStyle.container} id="footer">
       <div className={footerStyle.innerContainer}>
         <SuperEllipse
           r1={0.00006}
@@ -53,7 +52,7 @@ const footer = (): JSX.Element => {
                   Made with {"<3"} in Austria
                 </span>
               </div>
-              <div >
+              <div>
                 <ul className={footerStyle.privacy}>
                   <li>
                     <a>Imprint</a>

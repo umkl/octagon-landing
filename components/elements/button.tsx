@@ -6,19 +6,32 @@ interface Props {
   dark: boolean;
   children: ReactNode;
   width?: number;
+  height?: number;
+  fontsize?: string;
 }
 
-function Button({ dark, children, width }: Props) {
+// to="footer"
+//                     spy={true}
+//                     smooth={true}
+//                     offset={0}
+//                     duration={500}
+
+function Button({ dark, children, width, height, fontsize }: Props) {
   return (
     <div>
-      <div className={styles.shadow} />
-
-      <SuperEllipse
-        r1={0.03}
-        r2={0.5}
+      <div
+        className={styles.shadow}
         style={{
-          height: "40px",
-          width: "160px",
+          height: height == undefined ? "40px" : height + "px",
+          width: width == undefined ? "150px" : width + "px",
+        }}
+      />
+      <SuperEllipse
+        r1={0.001}
+        r2={0.8}
+        style={{
+          height: height == undefined ? "40px" : height + "px",
+          width: width == undefined ? "150px" : width + "px",
           backgroundColor: dark ? utilstyles.drk_color : utilstyles.pr_color,
           boxShadow: "0px 0px 10px 10px black",
           display: "flex",
@@ -26,7 +39,9 @@ function Button({ dark, children, width }: Props) {
           alignItems: "center",
         }}
       >
-        <p className={styles.text}>{children}</p>
+        <p className={styles.text} style={{ fontSize: fontsize ?? "20px" }}>
+          {children}
+        </p>
       </SuperEllipse>
     </div>
   );

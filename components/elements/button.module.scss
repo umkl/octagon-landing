@@ -2,14 +2,18 @@
 
 .text{
     color: white;
-    font-weight: i.$main_font_weight_700
+    font-weight: i.$main_font_weight_700;
+    
 }
 
 .shadow{
+    margin-top: 4px;
     height: 40px;
     width: 160px;
-    background-color: red;
+    background-color: i.$pr_color;
+    opacity: 0.25;
     position: absolute;
-    filter: url(#svg-blur);
+    // filter: url(#svg-blur);
+    filter: blur(20px);
 
 }
