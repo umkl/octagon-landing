@@ -12,7 +12,7 @@ const footer = (): JSX.Element => {
           style={{ width: "100%", height: "100%", backgroundColor: "white" }}
         >
           <div className={footerStyle.content}>
-            <h3 className={footerStyle.blockheading}>Contact</h3>
+            <div className={footerStyle.blockheading}>Contact</div>
             <div className={footerStyle.block1}>
               <div className={footerStyle.half}>
                 <p>E: office@octagon.at</p>
@@ -23,14 +23,14 @@ const footer = (): JSX.Element => {
                 <p>1010 Vienna, Austria</p>
               </div>
             </div>
-            <h3 className={footerStyle.blockheading}>Opening Times</h3>
+            <div className={footerStyle.blockheading}>Opening Times</div>
             <div className={footerStyle.block2}>
               <p>SUN - THU : 4 pm - 10.30 pm </p>
               <p>FRI - SAT : 4 pm - 11.00 pm</p>
             </div>
-            <h3 className={footerStyle.blockheading}>
-              Follow us on Social Media
-            </h3>
+            <div className={footerStyle.blockheading}>
+              <p>Follow us on Social Media</p>
+            </div>
             <div className={footerStyle.block3}>
               <div className={footerStyle.half}>
                 <p>Instagram</p>

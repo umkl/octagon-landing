@@ -21,14 +21,14 @@ const Home = (): JSX.Element => {
     <main>
       <section
         className={styles.section1}
-        style={{ height: size.height - NavbarHeight }}
+        style={{ height: size.height - 2 * NavbarHeight }}
       >
         <div className={styles.wrapper}>
-          <h2 className={utilStyles.heading1}>
+          <h2 className={utilStyles.heading_home_1}>
             Delicious food? <br /> All currencies? <br /> Good prices? <br />{" "}
             Octagon!
           </h2>
-          <p className={utilStyles.text1}>
+          <p className={utilStyles.text_home_1}>
             Whether Meat Lovers or Vegans, our meals make everyone happy!
           </p>
           <Button width={200} dark={false}>

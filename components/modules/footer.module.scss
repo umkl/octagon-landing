@@ -1,6 +1,5 @@
 @use './../../styles/abstracts/' as i;
-
-$phonesize: map-get(i.$breakpoints, 'phone');
+@use './../../styles/utils.module.scss' as u;
 
 .container{
     width: 100%;
@@ -11,8 +10,8 @@ $phonesize: map-get(i.$breakpoints, 'phone');
     // background-color: i.$pr_color;
     background: url(/Footer-section-background-1000BA.svg);
     background-size: cover;
-    @include i.media("<=phone"){
-        width: $phonesize;
+    @include i.media("<=small_phone"){
+        width: u.$small_phone;
     }
     .innerContainer{
         width: 90%;
@@ -20,23 +19,43 @@ $phonesize: map-get(i.$breakpoints, 'phone');
         position: relative;
         @include i.center;
         .content{
-            position: absolute;
+            position: relative;
             width: 90%;
             margin-top: 30px;
             height: 100%;
             @include i.centerX;
             .blockheading{
-                padding: 0;
                 margin: 10px 0 20px 0;
-                // background-color: red;
                 font-size: 1.5em;
                 // background-color: red;
-                // margin-top: 30px;
+                position: relative;
+                // width: 10px;
+                // height: 10px;
+                font-weight: i.$main_font_weight_600;
+                position: relative;
+                display: inline-block;
+                @include i.media("<=phone"){
+                    font-size: 1em;
+                    // max-width: 100%;
+                    // display: inline-block;
+                    // word-wrap: auto;
+                    // overflow-wrap: break-word;
+                    // word-wrap: break-word;
+                    // word-break: normal;
+                    // height: fit-content;
+                    // height: 200px;
+                    // font-size: 18px;
+                }
+                @include i.media("<=large_phone"){
+                    background-color: purple;
+                }
+
             }
             .block1{
                 display: flex;
                 @include i.media("<=tablet"){
                     flex-direction: column;
+                    display: block;
                 }
                 .half{
                     width: 250px;
@@ -49,6 +68,7 @@ $phonesize: map-get(i.$breakpoints, 'phone');
             .block3{
                 @include i.media("<=tablet"){
                     flex-direction: column;
+                    display: block;
                 }
                 display: flex;
                 .half{
@@ -81,15 +101,20 @@ $phonesize: map-get(i.$breakpoints, 'phone');
                 flex-direction: column;
             }
             @include i.media("<=phone"){
-                background-color: yellow;
                 flex-direction: column;
+                
             }
             .wrap{
                 display: flex;
-                
                 justify-content: center;
                 align-items: center;
                 align-content: center;
+                @include i.media("<=phone"){
+                    // flex-direction: column;
+                    span{
+                        font-size: 15px;
+                    }
+                }
                 .logo{
                     // background-color: red;
                     // display: flex;
@@ -100,6 +125,7 @@ $phonesize: map-get(i.$breakpoints, 'phone');
                     height: 60px;
                     width: 60px;
                 }
+                
                 span{
                     margin: 10px;
                     color: i.$gray;
@@ -116,21 +142,24 @@ $phonesize: map-get(i.$breakpoints, 'phone');
                 height: 100%;
                 flex-direction: row;
                 width: fit-content;
+                
                 li{
                     margin: 0 30px 0 0;
                     width: fit-content;
-                    // background-color: green;
                     white-space: nowrap;
                     display: block;
-
                     a{
                         width: fit-content;
                         cursor: pointer;
                         color: i.$gray;
                         font-weight: i.$main_font_weight_600;
                         font-size: 20px;
+                        @include i.media("<=large_phone"){
+                            font-size: 15px;
+                        }
                     }
                 }
+                
             }
         }
     }
