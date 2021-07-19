@@ -9,36 +9,42 @@ const footer = (): JSX.Element => {
         <SuperEllipse
           r1={0.00006}
           r2={0.132}
-          style={{ width: "100%", height: "100%", backgroundColor: "white" }}
+          style={{ width: "100%", height: "100%", backgroundColor: "white", position: "relative", margin: 0}}
         >
           <div className={footerStyle.content}>
             <div className={footerStyle.blockheading}>Contact</div>
             <div className={footerStyle.block1}>
               <div className={footerStyle.half}>
-                <p>E: office@octagon.at</p>
-                <p>T: +43 123 456789</p>
+                <span>E: office@octagon.at</span>
+                <span>T: +43 123 456789</span>
               </div>
               <div className={footerStyle.half}>
-                <p>Loremstreet 1</p>
-                <p>1010 Vienna, Austria</p>
+                <span>Loremstreet 1</span>
+                <span>1010 Vienna, Austria</span>
               </div>
             </div>
             <div className={footerStyle.blockheading}>Opening Times</div>
             <div className={footerStyle.block2}>
-              <p>SUN - THU : 4 pm - 10.30 pm </p>
-              <p>FRI - SAT : 4 pm - 11.00 pm</p>
+              <div className={footerStyle.half}>
+                <span>SUN - THU :&nbsp;</span>
+                <span>4 pm - 10.30 pm </span>
+              </div>
+              <div className={footerStyle.half}>
+                <span>FRI - SAT :&nbsp;</span>
+                <span> 4 pm - 11.00 pm</span>
+              </div>
             </div>
             <div className={footerStyle.blockheading}>
-              <p>Follow us on Social Media</p>
+              <span>Follow us on </span> <span>Social Media</span>
             </div>
             <div className={footerStyle.block3}>
               <div className={footerStyle.half}>
-                <p>Instagram</p>
-                <p>Dribbble</p>
+                <span>Instagram</span>
+                <span>Dribbble</span>
               </div>
               <div className={footerStyle.half}>
-                <p>Facebook</p>
-                <p>Twitter</p>
+                <span>Facebook</span>
+                <span>Twitter</span>
               </div>
             </div>
             <div className={footerStyle.bottom}>

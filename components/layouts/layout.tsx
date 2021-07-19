@@ -13,6 +13,7 @@ import Nav from "./../modules/nav";
 
 interface ILayout {
   children: ReactNode;
+  dark: boolean;
 }
 
 export const NavbarHeightContext: Context<{
@@ -31,14 +32,14 @@ export const NavActiveContext: Context<{
   setNavActive: (x) => {},
 });
 
-export default function Layout({ children }: ILayout) {
+export default function Layout({ children,dark }: ILayout) {
   const [NavbarHeight, setNavbarHeight] = useState(0);
   const [NavActive, setNavActive] = useState(false);
   const size: Size = useWindowSize();
   const blurSpring = useSpring({
     filter: NavActive ? "blur(5px)" : "blur(0px)",
   });
-
+  
   return (
     <NavActiveContext.Provider
       value={{ NavActive: NavActive, setNavActive: setNavActive }}

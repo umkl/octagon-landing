@@ -1,15 +1,27 @@
 @use './abstracts/index' as i;
 
 $small_phone: map-get(i.$breakpoints, "small_phone");
-$phonesize: map-get(i.$breakpoints, "phone");
-$tabletsize: map-get(i.$breakpoints, "tablet");
-$desktopsize: map-get(i.$breakpoints, "desktop");
+$phone: map-get(i.$breakpoints, "phone");
+$large_phone: map-get(i.$breakpoints, "large_phone");
+$tablet: map-get(i.$breakpoints, "tablet");
+$large_tablet: map-get(i.$breakpoints, "large_tablet");
+$desktop: map-get(i.$breakpoints, "desktop");
+$large_desktop: map-get(i.$breakpoints, "large_desktop");
+$hsmall: map-get(i.$breakpoints, "hSmall");
+$hmedium: map-get(i.$breakpoints, "hMedium");
+$hlarge: map-get(i.$breakpoints, "hLarge");
 
 :export {
   small_phone: map-get(i.$breakpoints, "small_phone");
-  phonesize: map-get(i.$breakpoints, "phone");
-  tabletsize: map-get(i.$breakpoints, "tablet");
-  desktopsize: map-get(i.$breakpoints, "desktop");
+  phone: map-get(i.$breakpoints, "phone");
+  large_phone: map-get(i.$breakpoints, "large_phone");
+  tablet: map-get(i.$breakpoints, "tablet");
+  large_tablet: map-get(i.$breakpoints, "large_tablet");
+  desktop: map-get(i.$breakpoints, "desktop");
+  large_desktop: map-get(i.$breakpoints, "large_desktop");
+  hSmall: map-get(i.$breakpoints, "hSmall");
+  hMedium: map-get(i.$breakpoints, "hMedium");
+  hLarge: map-get(i.$breakpoints, "hLarge");
 }
 
 .heading_home_1 {
@@ -18,13 +30,56 @@ $desktopsize: map-get(i.$breakpoints, "desktop");
   margin: 0;
   color: black;
   font-family: i.$main_font;
-  @include i.media("<=tablet") {
+  @include i.media("<=desktop") {
+    background-color: red;
     font-size: 2rem;
     line-height: 2rem;
+  }
+  
+  @include i.media("<=tablet") {
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+    width: 350px;
+    background-color: peru;
   }
   @include i.media("<=phone") {
     font-size: 1.6rem;
     line-height: 1.6rem;
+  }
+  @include i.media("height<hSmall", "portrait") {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+
+}
+
+.text_home_1 {
+  font-size: 25px;
+  line-height: 30px;
+  font-family: i.$main_font;
+  background-color: green;
+
+  @include i.media("<=desktop") {
+    background-color: red;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  @include i.media("<=tablet") {
+    max-width: 60%;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 10px 0;
+  }
+  @include i.media("<=phone") {
+    font-size: 10px;
+    line-height: 10px;
+  }
+  @include i.media("height<hSmall", "portrait") {
+    font-size: 10px;
+    line-height: 10px;
+    width: 150px;
   }
 }
 
@@ -34,17 +89,4 @@ $desktopsize: map-get(i.$breakpoints, "desktop");
   font-family: i.$main_font;
   color: black;
   font-weight: i.$main_font_weight_700;
-}
-
-.text_home_1 {
-  font-size: 25px;
-  line-height: 30px;
-  font-family: i.$main_font;
-  @include i.media("<=tablet") {
-    max-width: 60%;
-  }
-  @include i.media("<=phone") {
-    font-size: 10px;
-    line-height: 10px;
-  }
 }

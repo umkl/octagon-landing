@@ -23,7 +23,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
   const size: Size = useWindowSize();
   const navRef = useRef(null);
   const FullNavbar: boolean =
-    size.width > parseInt(utilStyles.tabletsize) - 100;
+    size.width > parseInt(utilStyles.tablet) - 100;
 
   const { NavbarHeight, setNavbarHeight } = useContext(NavbarHeightContext);
   const { NavActive: NavActive, setNavActive: setNavActive } = useContext(

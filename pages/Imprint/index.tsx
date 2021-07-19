@@ -6,7 +6,7 @@ function Props(props: Props) {
     const {} = props
 
     return (
-        <div>hello from privacy</div>
+        <div>hello from imprint</div>
     )
 }
 
