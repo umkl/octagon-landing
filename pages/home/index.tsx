@@ -16,15 +16,14 @@ import ScrollIcon from "../../assets/Icons/scroll-icon.svg";
 const Home = (): JSX.Element => {
   const { NavbarHeight } = useContext(NavbarHeightContext);
   const size: Size = useWindowSize();
-  console.log()
 
-  const calcHeightSection1 = () =>{
-    if(size.height<parseInt(utilStyles.hSmall, 10)){  
-      return parseInt(utilStyles.hSmall, 10) - 2 * NavbarHeight;
-    }else{
-      return size.height - 2 * NavbarHeight;
+  const calcHeightSection1 = () => {
+    if (size.height < parseInt(utilStyles.hSmall, 10)) {
+      return parseInt(utilStyles.hSmall, 10) - 2*NavbarHeight;
+    } else {
+      return size.height - 2*NavbarHeight;
     }
-  }
+  };
   return (
     <>
       <div className={styles.scrollSuggestor}>
@@ -36,12 +35,12 @@ const Home = (): JSX.Element => {
       <main>
         <section
           className={styles.section1}
-          style={{ height: calcHeightSection1() }}
+          style={{ height: calcHeightSection1(), marginBottom: NavbarHeight}}
         >
           <div className={styles.introtext}>
             <h2 className={utilStyles.heading_home_1}>
               Delicious food? <br /> All currencies? <br /> Good prices? <br />{" "}
-              Octagon!
+              <span>Octagon!</span>
             </h2>
             <p className={utilStyles.text_home_1}>
               Whether Meat Lovers or Vegans, our meals make everyone happy!
@@ -62,22 +61,24 @@ const Home = (): JSX.Element => {
           </div>
         </section>
         <Detail
+          flipped
           teaser="WE OFFER ..."
           header="Amazing Food!"
           text="Enjoy the best food in town while being in a relaxing environment."
-          image={Image2}
+          Image={Image2}
         />
         <Detail
           teaser="YOU CAN ..."
           header="Pay with whatever you want"
           text="Octagon follows the digitalistation trend and even supports all crypt-currencies!"
-          image={Image3}
+          Image={Image3}
         />
         <Detail
+          flipped
           teaser="WE HAVE ..."
           header="5 Star rating"
           text="Everyone likes our food! Make it even better by getting discounts by sharing your visit on social-media. "
-          image={Image4}
+          Image={Image4}
         />
       </main>
     </>

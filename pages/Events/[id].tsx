@@ -1,48 +1,48 @@
-import Layout from '../../components/layouts/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.scss'
-import { GetStaticPaths, GetStaticProps} from 'next'
+import Layout from "../../components/layouts/layout";
+import { getAllEventIds, getEventData } from "../../lib/events";
+import Head from "next/head";
+import Date from "../../components/date";
+import utilStyles from "../../styles/utils.module.scss";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 export default function Post({
-  postData
-  } : {
-    postData:{
-      title: string
-      date: string
-      contentHtml: string
-    }
-  }) {
+  eventData,
+}: {
+  eventData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+}) {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>{postData.title}</title>
+        <title>{eventData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <h1 className={utilStyles.headingXl}>{eventData.title}</h1>
         <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+          <Date dateString={eventData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: eventData.contentHtml }} />
       </article>
-    </Layout>
-  )
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllEventIds();
   return {
     paths,
-    fallback: false
-  }
-}
+    fallback: false,
+  };
+};
 
-export const getStaticProps: GetStaticProps = async({params}) => {
-  const postData = await getPostData(params.id as string)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const eventData = await getEventData(params.id as string);
   return {
     props: {
-      postData
-    }
-  }
-}
+      eventData,
+    },
+  };
+};

@@ -10,7 +10,6 @@ interface Props {
   fontsize?: string;
 }
 
-
 function Button({ dark, children, width, height, fontsize }: Props) {
   return (
     <div>

@@ -4,25 +4,21 @@ import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html'
 
-const postsDirectory = path.join(process.cwd(),'posts');
+const postsDirectory = path.join(process.cwd(),'events');
 
-export function getSortedPostsData(){
+export function getSortedEventsData(){
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map(fileName =>{
-    // get filename for id
-    const id = fileName.replace(/\.md$/,'')
-
+  const allEventsData = fileNames.map(fileName =>{
+    const id = fileName.replace(/\.md$/,'');
     const fullPath = path.join(postsDirectory,fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-
     const matterResult = matter(fileContents);
-
     return {
       id,
       ...(<{date: string; title:string}>matterResult.data)
     }
   })
-  return allPostsData.sort((a,b)=>{
+  return allEventsData.sort((a,b)=>{
     if(a.date < b.date){
       return 1;
     }else {
@@ -31,7 +27,7 @@ export function getSortedPostsData(){
   })
 }
 
-export function getAllPostIds(){
+export function getAllEventIds(){
   const fileNames = fs.readdirSync(postsDirectory)
   return fileNames.map(fileName=>{
     return {
@@ -42,20 +38,26 @@ export function getAllPostIds(){
   })
 }
 
-export async function getPostData(id:string){
+export async function getEventData(id:string){
   const fullPath = path.join(postsDirectory,`${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-
   const matterResult = matter(fileContents);
-
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
-
   return {
     id,
     contentHtml,
     ...(matterResult.data as {date:string; title:string})
+  }
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedEventsData()
+  return {
+    props: {
+      allPostsData
+    }
   }
 }

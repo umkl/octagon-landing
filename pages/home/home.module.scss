@@ -7,6 +7,7 @@
 .scrollSuggestor {
   position: fixed;
   bottom: 10px;
+  top:calc(90vh - 10px);
   @include i.media("height<hSmall","portrait") {
     bottom:unset;
     top:calc(u.$hsmall - 10px);
@@ -35,6 +36,8 @@
 }
 
 .section1 {
+background-color: red;
+
   position: relative;
   width: 90%;
   height: fit-content;
@@ -111,7 +114,7 @@
 
       width: 300px;
       // height: 200px;
-      background-color: green;
+      // background-color: green;
       // background-color: blue;
       display: flex;
       justify-content: center;
@@ -131,5 +134,55 @@
       width: 240px;
 
     }
+  }
+}
+
+.detailSection{
+  display: flex;
+  justify-content:space-between;
+  height: fit-content;
+  margin: 30px 0;
+  width: 100%;
+  // background-color: green;
+  position: relative;
+  max-width: 1500px;
+  @include i.centerX;
+  .textpart{
+    // flex:1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // max-width: 200px;
+    // background-color: gray;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .teaser{
+      font-size: 15px;
+      color: i.$se_blue;
+    }
+    .header{
+      font-size: 50px;
+      line-height:50px;
+      // background-color: aqua;
+      width: 100%;
+      position: relative;
+      font-weight: i.$main_font_weight_700; 
+      margin: 10px 0;
+      text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.116);
+    }
+    .text{
+      font-size: 20px;
+      max-width: 60%;
+      
+    }
+  }
+  .image{
+    position: relative;
+    height: 100%;
+    width: 55%;
+    // background-color: purple;
   }
 }
