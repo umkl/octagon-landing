@@ -1,7 +1,5 @@
 @use './../../styles/abstracts/index' as i;
 
-.headingLg{
-    font-size: 2em;
-    font-weight: i.$main_font_weight_600;
-    
+.section{
+    margin: 10px;
 }

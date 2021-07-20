@@ -10,7 +10,7 @@
   background: url(/Footer-section-background-1000BA.svg);
   background-size: cover;
   @include i.media("<=small_phone") {
-    width: u.$small_phone;
+    width: i.$small_phone;
   }
 
   span {

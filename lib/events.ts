@@ -4,13 +4,13 @@ import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html'
 
-const postsDirectory = path.join(process.cwd(),'events');
+const eventsDirectory = path.join(process.cwd(),'events');
 
 export function getSortedEventsData(){
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(eventsDirectory);
   const allEventsData = fileNames.map(fileName =>{
     const id = fileName.replace(/\.md$/,'');
-    const fullPath = path.join(postsDirectory,fileName);
+    const fullPath = path.join(eventsDirectory,fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
     return {
@@ -27,8 +27,14 @@ export function getSortedEventsData(){
   })
 }
 
+
+export async function getUpcomingEvent(){
+  const allEvents = getSortedEventsData();
+  return allEvents[0];
+}
+
 export function getAllEventIds(){
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(eventsDirectory)
   return fileNames.map(fileName=>{
     return {
       params:{
@@ -39,7 +45,7 @@ export function getAllEventIds(){
 }
 
 export async function getEventData(id:string){
-  const fullPath = path.join(postsDirectory,`${id}.md`)
+  const fullPath = path.join(eventsDirectory,`${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents);
   const processedContent = await remark()

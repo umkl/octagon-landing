@@ -10,7 +10,7 @@
   top:calc(90vh - 10px);
   @include i.media("height<hSmall","portrait") {
     bottom:unset;
-    top:calc(u.$hsmall - 10px);
+    top:calc(i.$hsmall - 10px);
     // z-index: 9999;
   }
   @include i.centerX;

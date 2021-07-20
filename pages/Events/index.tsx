@@ -2,7 +2,7 @@ import utilStyles from "./../../styles/utils.module.scss";
 import Link from "next/link";
 import Date from "../../components/date";
 import { GetStaticProps } from "next";
-import { getSortedEventsData } from "../../lib/events";
+import { getSortedEventsData} from "../../lib/events";
 import eventStyles from "./events.module.scss";
 
 const Events = ({
@@ -14,17 +14,21 @@ const Events = ({
     id: string;
   }[];
 }): JSX.Element => {
+  
+  const upcomingEvent = allPostsData[0];
   return (
     <main>
       {/* <section className={utilStyles.headingMd}>
       </section> */}
       <section className={`${eventStyles.section}`}>
-        <h2 className={eventStyles.headingLg}>Unforgettable Moments</h2>
-        <h3 className={eventStyles.headingSm}>Enjoy memorable occasions with your friends and family at Octagon Events.</h3>
-        <p className={eventStyles.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis proin porttitor fames suspendisse rhoncus sed id. Sed in ut nulla morbi. Enim suscipit et libero, turpis tempus ut. Pellentesque lobortis orci velit sollicitudin nisl sed. Fames pulvinar fames amet eu elit. Faucibus suspendisse mauris non libero urna eleifend nisl.</p>
+        <h2 className={utilStyles.headingLg}>Unforgettable Moments</h2>
+        <h3 className={utilStyles.headingMdFd}>Enjoy memorable occasions with your friends and family at Octagon Events.</h3>
+        <p className={utilStyles.textMd}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque fugit odit quibusdam doloribus iure, quae reiciendis aspernatur aperiam inventore modi est totam pariatur, ab quasi iste deleniti, optio molestiae! Totam! Deleniti quia minus earum tempora explicabo obcaecati omnis ab vitae voluptate, ullam deserunt inventore alias ducimus quasi corporis exercitationem? Beatae vero totam, saepe deleniti incidunt dolores provident odit cum quo? Minus debitis ipsam explicabo expedita vero excepturi commodi quidem asperiores officia recusandae? Inventore earum, et hic eos molestias eum! Natus quam exercitationem sunt voluptatum suscipit, hic architecto voluptate magni cupiditate? Hic, nihil, ad officiis consequuntur inventore repellat illum, sint aliquid natus quaerat temporibus similique. Eveniet dolorum expedita omnis rerum, rem adipisci blanditiis quis magnam! Asperiores aperiam consectetur magni non totam?</p>
         <div className={eventStyles.upcmngHeader}>Upcoming Event</div>
         <div className={eventStyles.upcmngEvent}>
-          allPostsData
+          {upcomingEvent.date}
+          {upcomingEvent.date}
+          {upcomingEvent.date}
         </div>
         scroll for more ...
 

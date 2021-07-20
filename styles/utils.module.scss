@@ -1,16 +1,5 @@
 @use './abstracts/index' as i;
 
-$small_phone: map-get(i.$breakpoints, "small_phone");
-$phone: map-get(i.$breakpoints, "phone");
-$large_phone: map-get(i.$breakpoints, "large_phone");
-$tablet: map-get(i.$breakpoints, "tablet");
-$large_tablet: map-get(i.$breakpoints, "large_tablet");
-$desktop: map-get(i.$breakpoints, "desktop");
-$large_desktop: map-get(i.$breakpoints, "large_desktop");
-$hsmall: map-get(i.$breakpoints, "hSmall");
-$hmedium: map-get(i.$breakpoints, "hMedium");
-$hlarge: map-get(i.$breakpoints, "hLarge");
-
 :export {
   small_phone: map-get(i.$breakpoints, "small_phone");
   phone: map-get(i.$breakpoints, "phone");
@@ -22,6 +11,33 @@ $hlarge: map-get(i.$breakpoints, "hLarge");
   hSmall: map-get(i.$breakpoints, "hSmall");
   hMedium: map-get(i.$breakpoints, "hMedium");
   hLarge: map-get(i.$breakpoints, "hLarge");
+}
+
+.headingLg{
+  font-size: 2.5em;
+  font-weight: i.$main_font_weight_800;
+  // line-height: 2.4em;
+  margin-bottom: 0;
+  // background-color: red;
+}
+
+.headingMd{
+
+}
+
+.headingMdFd{
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: i.$main_font_weight_600;
+  color: i.$gray_text;
+}
+
+.headingSl{
+  
+}
+
+.textMd{
+  font-weight: i.$main_font_weight_400;
 }
 
 .heading_home_1 {
