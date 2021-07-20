@@ -1,13 +1,19 @@
-import React from 'react'
+import Head from "next/head";
+import React from "react";
 
 interface Props {}
 
 function Props(props: Props) {
-    const {} = props
+  const {} = props;
 
-    return (
-        <div>hello from imprint</div>
-    )
+  return (
+    <>
+      <Head>
+        <title>Imprint - Octagon</title>
+      </Head>
+      <div>hello from imprint</div>
+    </>
+  );
 }
 
-export default Props
+export default Props;

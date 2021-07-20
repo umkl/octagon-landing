@@ -11,6 +11,13 @@
   hSmall: map-get(i.$breakpoints, "hSmall");
   hMedium: map-get(i.$breakpoints, "hMedium");
   hLarge: map-get(i.$breakpoints, "hLarge");
+  pr_color: i.$pr_color;
+  drk_color: i.$drk_color;
+  se_blue: i.$se_blue;
+  se_blue_light: i.$se_blue_light;
+  gray: i.$gray;
+  gray_text: i.$gray_text;
+  
 }
 
 .headingLg{
