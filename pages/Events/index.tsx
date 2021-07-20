@@ -6,9 +6,8 @@ import { getCompleteSortedEventsData, IEventData } from "../../lib/events";
 import eventStyles from "./events.module.scss";
 import Event from "./event";
 
-const Events = ({allEventsData}): JSX.Element => {
-  const upcomingEvent = allEventsData[0];
-  console.log("allpostsdata:"+upcomingEvent.date);
+const Events = ({allEventsData}:{allEventsData:IEventData}): JSX.Element => {
+  const upcomingEvent: IEventData = allEventsData[0];
   return (
     <main>
       {/* <section className={utilStyles.headingMd}>
@@ -36,8 +35,8 @@ const Events = ({allEventsData}): JSX.Element => {
           magnam! Asperiores aperiam consectetur magni non totam?
         </p>
         <div className={eventStyles.upcmngHeader}>Upcoming Event</div>
-        <div className={eventStyles.upcmngEvent}>
-          {upcomingEvent.contentHTML}
+        <div className={eventStyles.upcmngEvent} dangerouslySetInnerHTML={{__html: upcomingEvent.contentHtml}}>
+          
           {/* <Event id={upcomingEvent.id} date={upcomingEvent.date}/> */}
         </div>
         scroll for more ...

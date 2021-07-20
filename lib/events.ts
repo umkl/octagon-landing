@@ -7,12 +7,11 @@ import html from "remark-html";
 const eventsDirectory = path.join(process.cwd(), "events");
 
 export interface IEventData {
-  date: string;
-  title: string;
   id: string;
   contentHtml: string;
+  date: string;
+  title: string;
 }
-
 
 export function getSortedEventsData() {
   const fileNames = fs.readdirSync(eventsDirectory);
@@ -98,10 +97,10 @@ export async function getCompleteSortedEventsData(): Promise<IEventData[]> {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedEventsData();
+  const allEventsData = getCompleteSortedEventsData();
   return {
     props: {
-      allPostsData,
+      allPostsData: allEventsData,
     },
   };
 }
