@@ -5,7 +5,9 @@ import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.scss";
 import { GetStaticPaths, GetStaticProps } from "next";
 
-export default function Post({
+
+
+export default function Event({
   eventData,
 }: {
   eventData: {
