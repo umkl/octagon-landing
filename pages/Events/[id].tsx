@@ -7,7 +7,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 
 
 
-export default function Event({
+export default function EventDetail({
   eventData,
 }: {
   eventData: {
@@ -18,7 +18,7 @@ export default function Event({
 }) {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{eventData.title}</title>
       </Head>
       <article>
@@ -27,7 +27,8 @@ export default function Event({
           <Date dateString={eventData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: eventData.contentHtml }} />
-      </article>
+      </article> */}
+      seas
     </>
   );
 }

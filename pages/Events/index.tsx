@@ -5,14 +5,28 @@ import { GetStaticProps } from "next";
 import { getCompleteSortedEventsData, IEventData } from "../../lib/events";
 import eventStyles from "./events.module.scss";
 import Event from "./event";
+import { useContext } from "react";
+import { NavbarHeightContext } from "../../components/layouts/layout";
+import useWindowSize, { Size } from "../../hooks/useWindowSize";
 
 const Events = ({allEventsData}:{allEventsData:IEventData}): JSX.Element => {
   const upcomingEvent: IEventData = allEventsData[0];
+  const { NavbarHeight } = useContext(NavbarHeightContext);
+  const size: Size = useWindowSize();
+
+  const calcHeightSection1 = () => {
+    // if (size.height < parseInt(utilStyles.hSmall, 10)) {
+    //   return parseInt(utilStyles.hSmall, 10) - 2*NavbarHeight;
+    // } else {
+    // }
+    return size.height - 2*NavbarHeight;
+  };
+
   return (
-    <main>
+    <main >
       {/* <section className={utilStyles.headingMd}>
       </section> */}
-      <section className={`${eventStyles.section}`}>
+      <section className={`${eventStyles.section}`} style={{minHeight:`${calcHeightSection1}px`}}>
         <h2 className={utilStyles.headingLg}>Unforgettable Moments</h2>
         <h3 className={utilStyles.headingMdFd}>
           Enjoy memorable occasions with your friends and family at Octagon
@@ -37,7 +51,7 @@ const Events = ({allEventsData}:{allEventsData:IEventData}): JSX.Element => {
         <div className={eventStyles.upcmngHeader}>Upcoming Event</div>
         <div className={eventStyles.upcmngEvent} dangerouslySetInnerHTML={{__html: upcomingEvent.contentHtml}}>
           
-          {/* <Event id={upcomingEvent.id} date={upcomingEvent.date}/> */}
+          {/* <Event upcomingEvent/> */}
         </div>
         scroll for more ...
         <ul className={utilStyles.list}>

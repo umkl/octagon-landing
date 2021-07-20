@@ -9,7 +9,7 @@ interface Props {
   flipped?: boolean;
 }
 
-function Detail(props: Props) {
+function HomeDetail(props: Props) {
   const { teaser, header, text, Image, flipped} = props;
 
   return (
@@ -24,4 +24,4 @@ function Detail(props: Props) {
   );
 }
 
-export default Detail;
+export default HomeDetail;

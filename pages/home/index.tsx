@@ -2,7 +2,7 @@ import utilStyles from "./../../styles/utils.module.scss";
 import Button from "../../components/elements/button";
 import styles from "./home.module.scss";
 import arrow from "./../../assets/Icons/arrow.svg";
-import Detail from "./detail";
+import HomeDetail from "./detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext } from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
@@ -60,20 +60,20 @@ const Home = (): JSX.Element => {
             />
           </div>
         </section>
-        <Detail
+        <HomeDetail
           flipped
           teaser="WE OFFER ..."
           header="Amazing Food!"
           text="Enjoy the best food in town while being in a relaxing environment."
           Image={Image2}
         />
-        <Detail
+        <HomeDetail
           teaser="YOU CAN ..."
           header="Pay with whatever you want"
           text="Octagon follows the digitalistation trend and even supports all crypt-currencies!"
           Image={Image3}
         />
-        <Detail
+        <HomeDetail
           flipped
           teaser="WE HAVE ..."
           header="5 Star rating"
