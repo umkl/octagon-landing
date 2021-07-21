@@ -7,10 +7,10 @@
 .scrollSuggestor {
   position: fixed;
   bottom: 10px;
-  top:calc(90vh - 10px);
-  @include i.media("height<hSmall","portrait") {
-    bottom:unset;
-    top:calc(i.$hsmall - 10px);
+  top: calc(90vh - 10px);
+  @include i.media("height<hSmall", "portrait") {
+    bottom: unset;
+    top: calc(i.$hsmall - 10px);
     // z-index: 9999;
   }
   @include i.centerX;
@@ -32,7 +32,6 @@
     height: 20px;
     width: 20px;
   }
-
 }
 
 .section1 {
@@ -64,12 +63,10 @@
     height: 1000px;
   }
 
-  @include i.media("height<hSmall","<=phone") {
+  @include i.media("height<hSmall", "<=phone") {
     align-items: flex-start;
     justify-content: flex-end;
   }
-
-  
 
   .introtext {
     width: 50%;
@@ -86,7 +83,6 @@
       top: 0;
       transform: translateY(0);
     }
-    
   }
   .image1 {
     @include i.media(">=tablet") {
@@ -103,7 +99,6 @@
       justify-content: center;
     }
 
-
     @include i.media("<=tablet") {
       position: relative;
       transform: translateX(-50%);
@@ -117,64 +112,61 @@
       justify-content: center;
       align-items: center;
     }
-    @include i.media("height<hSmall","<=tablet") {
+    @include i.media("height<hSmall", "<=tablet") {
       height: 300px;
       width: 300px;
     }
-    @include i.media("height<hSmall","<=phone") {
+    @include i.media("height<hSmall", "<=phone") {
       height: 240px;
       width: 240px;
-
     }
   }
 }
 
-.detailSection{
+.detailSection {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   height: fit-content;
   margin: 30px 0;
   width: 100%;
-  // background-color: green;
   position: relative;
   max-width: 1500px;
   @include i.centerX;
-  .textpart{
-    // flex:1;
+  .textpart {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    // max-width: 200px;
-    // background-color: gray;
     width: 50%;
-    padding: 40px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .teaser{
-      font-size: 15px;
-      color: i.$se_blue;
-    }
-    .header{
-      font-size: 50px;
-      line-height:50px;
-      // background-color: aqua;
+    .animatedTextContainer {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
       width: 100%;
-      position: relative;
-      font-weight: i.$main_font_weight_700; 
-      margin: 10px 0;
-      text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.116);
-    }
-    .text{
-      font-size: 20px;
-      max-width: 60%;
-      
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      padding: 40px;
+      .teaser {
+        font-size: 15px;
+        color: i.$se_blue;
+      }
+      .header {
+        font-size: 50px;
+        line-height: 50px;
+        width: 100%;
+        position: relative;
+        font-weight: i.$main_font_weight_700;
+        margin: 10px 0;
+        text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.116);
+      }
+      .text {
+        font-size: 20px;
+        max-width: 60%;
+      }
     }
   }
-  .image{
+  .image {
     position: relative;
     height: 100%;
     width: 55%;
-    // background-color: purple;
   }
 }

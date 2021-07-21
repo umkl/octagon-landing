@@ -22,7 +22,7 @@ const footer = ({dark}:{dark:boolean}): JSX.Element => {
           }}
         >
           <div className={footerStyle.content}>
-            <div className={footerStyle.blockheading}>Contact</div>
+            <div className={footerStyle.blockheading}><br/>Contact</div>
             <div className={footerStyle.block1}>
               <div className={footerStyle.half}>
                 <span>E: office@octagon.at</span>

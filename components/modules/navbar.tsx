@@ -1,6 +1,7 @@
 import navStyles from "./navbar.module.scss";
 import utilStyles from "./../../styles/utils.module.scss";
-import OctagonLogo from "./../../assets/Logo/Octagon-logo-poppins-1000BA.svg";
+import OctagonLogo from "./../../assets/Logo/Octagon-logo-poppins-1000BA-baked.svg";
+import OctagonLogoImage from "./../../assets/Logo/Octagon-logo-poppins-1000BA.png";
 import OctagonLogoBlack from "./../../assets/Logo/Octagon-logo-poppins-000000.svg";
 import SmallOctagonLogo from "./../../assets/Logo/Octagon-logo-1000BA.svg";
 import Menu from "./../../assets/Icons/Menu.svg";
@@ -14,6 +15,7 @@ import { NavActiveContext, NavbarHeightContext } from "./../layouts/layout";
 import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
 import { Link as Link2, animateScroll as scroll } from "react-scroll";
 import Button from "./../elements/button";
+import Image from 'next/image';
 
 interface ILayout {
   dark?: boolean;
@@ -69,7 +71,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
             <>
               <div className={navStyles.logo}>
                 <Link href="/">
-                  <a>{dark ? <OctagonLogoBlack /> : <OctagonLogo />}</a>
+                  <a>{dark ? <OctagonLogoBlack /> : <Image height={180} width={180} src={OctagonLogoImage} alt="Octagon Logo"/>}</a>
                 </Link>
               </div>
               <div className={navStyles.navigator}>
