@@ -4,7 +4,7 @@ import Layout from "../components/layouts/layout";
 import utilStyles from "../styles/utils.module.scss";
 import { getSortedEventsData } from "../lib/events";
 import Link from "next/link";
-import Date from "../components/date";
+import Date from "../components/elements/date";
 import { GetStaticProps } from "next";
 import Home from "./Home";
 

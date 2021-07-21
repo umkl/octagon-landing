@@ -1,14 +1,22 @@
 @use './../../styles/abstracts/' as i;
 @use './../../styles/utils.module.scss' as u;
 
+.prBg {
+  background: url(/Footer-section-background-1000BA.svg);
+  background-size: cover;
+}
+
+.darkBg {
+  background: url(/Footer-section-background-black.svg);
+  background-size: cover;
+}
+
 .container {
   width: 100%;
   height: 100vh;
-  //   margin-bottom: -10px;
   position: relative;
   white-space: wrap;
-  background: url(/Footer-section-background-1000BA.svg);
-  background-size: cover;
+
   @include i.media("<=small_phone") {
     width: i.$small_phone;
   }
@@ -97,7 +105,6 @@
           span {
             &:hover {
               cursor: pointer;
-              color: i.$pr_color;
               text-decoration: underline;
             }
           }
@@ -174,6 +181,7 @@
           width: fit-content;
           white-space: nowrap;
           display: block;
+
           @include i.media("<=large_phone") {
             // margin: 0 30px 0 30px;
           }
@@ -181,9 +189,14 @@
           a {
             width: fit-content;
             cursor: pointer;
-            color: i.$gray;
+            // color: i.$gray;
             font-weight: i.$main_font_weight_600;
             font-size: 20px;
+            color: i.$gray;
+            &:hover {
+              color: rgba(0, 0, 0, 0.434);
+              transition: 0.5s;
+            }
             @include i.media("<=large_phone") {
               font-size: 12px;
             }

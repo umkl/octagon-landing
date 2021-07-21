@@ -1,6 +1,6 @@
 import utilStyles from "./../../styles/utils.module.scss";
 import Link from "next/link";
-import Date from "../../components/date";
+// import Date from "../../components/elements/date";
 import { GetStaticProps } from "next";
 import { getCompleteSortedEventsData, IEventData } from "../../lib/events";
 import eventStyles from "./events.module.scss";
@@ -36,7 +36,6 @@ const Events = ({
         <section
           className={`${eventStyles.section}`}
           style={{
-            backgroundColor: "red",
             minHeight: `${calcHeightSection1()}px`,
           }}
         >
@@ -53,6 +52,7 @@ const Events = ({
           <div className={eventStyles.upcmngHeader}>Upcoming Event</div>
           <div className={eventStyles.upcmngEvent}>
             <Event
+              key={upcomingEvent.id}
               id={upcomingEvent.id}
               title={upcomingEvent.title}
               contentHtml={upcomingEvent.contentHtml}

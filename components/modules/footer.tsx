@@ -1,15 +1,25 @@
 import footerStyle from "./footer.module.scss";
 import SuperEllipse from "react-superellipse";
 import OctagonLogo from "./../../assets/Logo/Octagon-logo-grayed.svg";
+import React from "react";
+import Link from "next/link";
 
-const footer = (): JSX.Element => {
+const footer = ({dark}:{dark:boolean}): JSX.Element => {
+  
+  
   return (
-    <footer className={footerStyle.container} id="footer">
+    <footer className={`${dark ? footerStyle.darkBg: footerStyle.prBg} ${footerStyle.container}`} id="footer">
       <div className={footerStyle.innerContainer}>
         <SuperEllipse
           r1={0.00006}
           r2={0.132}
-          style={{ width: "100%", height: "100%", backgroundColor: "white", position: "relative", margin: 0}}
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "white",
+            position: "relative",
+            margin: 0,
+          }}
         >
           <div className={footerStyle.content}>
             <div className={footerStyle.blockheading}>Contact</div>
@@ -61,10 +71,14 @@ const footer = (): JSX.Element => {
               <div>
                 <ul className={footerStyle.privacy}>
                   <li>
-                    <a>Imprint</a>
+                    <Link href={"/Imprint"}>
+                      <a>Imprint</a>
+                    </Link>
                   </li>
                   <li>
-                    <a>Privacy & Cookie policy</a>
+                    <Link href={"/Privacy"}>
+                      <a>Privacy & Cookie policy</a>
+                    </Link>
                   </li>
                 </ul>
               </div>

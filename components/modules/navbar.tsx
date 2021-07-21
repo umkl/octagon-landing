@@ -1,6 +1,7 @@
 import navStyles from "./navbar.module.scss";
 import utilStyles from "./../../styles/utils.module.scss";
 import OctagonLogo from "./../../assets/Logo/Octagon-logo-poppins-1000BA.svg";
+import OctagonLogoBlack from "./../../assets/Logo/Octagon-logo-poppins-000000.svg";
 import SmallOctagonLogo from "./../../assets/Logo/Octagon-logo-1000BA.svg";
 import Menu from "./../../assets/Icons/Menu.svg";
 import Menu_Dark from "./../../assets/Icons/Menu-dark.svg";
@@ -22,9 +23,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
   const [isLoaded, setLoaded] = useState<boolean>(false);
   const size: Size = useWindowSize();
   const navRef = useRef(null);
-  const FullNavbar: boolean =
-    size.width > parseInt(utilStyles.tablet) - 100;
-
+  const FullNavbar: boolean = size.width > parseInt(utilStyles.tablet) - 100;
   const { NavbarHeight, setNavbarHeight } = useContext(NavbarHeightContext);
   const { NavActive: NavActive, setNavActive: setNavActive } = useContext(
     NavActiveContext
@@ -68,7 +67,8 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
               <div className={navStyles.logo}>
                 <Link href="/">
                   <a>
-                    <OctagonLogo />
+                    {dark?<OctagonLogoBlack />:<OctagonLogo />}
+                    
                   </a>
                 </Link>
               </div>
@@ -115,7 +115,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                       <span>Contact</span>
                     </SuperEllipse> */}
                     <Button
-                      dark={false}
+                      dark={dark}
                       fontsize="20px"
                       width={120}
                       height={40}

@@ -14,5 +14,39 @@
 
 .eventContainer{
     // background-color: red;
+    margin: 20px 0;
+    .eventContent{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        position: relative;
+        .textpart{
+            margin: 20px;
+            width: 50%;
+            // background-color: purple;
+            .title{
+                color: white;
+                font-size: 40px;
+                margin: 0;
+                font-weight: i.$main_font_weight_700;
+            }   
+            .contentHTML{
+                color:white;
+                font-size: 20px;
+                font-weight: i.$main_font_weight_400;
+            }
+        }
+        .imagePart{
+            margin: 40px;
+            position: relative;
+            height: 400px;
+            width: 400px;
+            // background-color: blue;
+            // .image{
+            //     height: 100px;
+            //     width: 100px;
+            // }
+        }
+    }
 
 }

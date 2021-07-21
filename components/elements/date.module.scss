@@ -1,0 +1,15 @@
+.container{
+    color: white;
+    div{
+        display: flex;
+        .icon{
+            margin: 10px;
+            height: 28px;
+            width: 28px;
+        }
+        .value{
+            margin: 10px 0;
+        }
+    }
+    
+}

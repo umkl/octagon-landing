@@ -29,6 +29,7 @@ export const NavActiveContext: Context<{
   setNavActive: (x: any) => void;
 }> = React.createContext({
   NavActive: false,
+  
   setNavActive: (x) => {},
 });
 
@@ -45,7 +46,7 @@ export default function Layout({ children,dark }: ILayout) {
       value={{ NavActive: NavActive, setNavActive: setNavActive }}
     >
       <>
-        <Nav />
+        <Nav dark={dark} />
         <a.div style={blurSpring} onClick={()=>{if(NavActive==true){setNavActive(false)}}}>
           <div className={styles.container}>
             <Head>
@@ -59,7 +60,7 @@ export default function Layout({ children,dark }: ILayout) {
             <NavbarHeightContext.Provider
               value={{ NavbarHeight, setNavbarHeight }}
             >
-              <Navbar />
+              <Navbar dark={dark}/>
               <main
                 className={styles.main}
                 style={{
@@ -70,7 +71,7 @@ export default function Layout({ children,dark }: ILayout) {
               </main>
             </NavbarHeightContext.Provider>
           </div>
-          <Footer />
+          <Footer dark={dark}/>
         </a.div>
       </>
     </NavActiveContext.Provider>

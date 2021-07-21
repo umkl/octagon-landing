@@ -21,7 +21,7 @@
 }
 
 .headingLg{
-  font-size: 2.5em;
+  font-size: 2.7em;
   font-weight: i.$main_font_weight_800;
   // line-height: 2.4em;
   margin-bottom: 0;
@@ -29,22 +29,47 @@
 }
 
 .headingMd{
-
+  font-size: 2.2em;
+  font-weight: i.$main_font_weight_800;
+  // line-height: 2.4em;
+  margin-bottom: 0;
+  // background-color: red;
 }
 
 .headingMdFd{
   margin: 0;
-  font-size: 1.4em;
-  font-weight: i.$main_font_weight_600;
+  font-size: 1.6em;
+  font-weight: i.$main_font_weight_700;
   color: i.$gray_text;
 }
 
 .headingSl{
   
 }
+.headingSlFd{
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: i.$main_font_weight_700;
+  color: i.$gray_text;
+}
 
 .textMd{
   font-weight: i.$main_font_weight_400;
+  font-size: 20px;
+  color: i.$gray_text;
+}
+
+.textLg{
+  font-weight: i.$main_font_weight_500;
+  color: i.$gray_text;
+  font-size: 25px;
+}
+
+.textLgBl{
+  font-weight: i.$main_font_weight_500;
+  color: i.$gray_text;
+  font-size: 25px;
+  color: black;
 }
 
 .heading_home_1 {

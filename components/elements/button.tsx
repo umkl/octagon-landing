@@ -16,6 +16,7 @@ function Button({ dark, children, width, height, fontsize }: Props) {
       <div
         className={styles.shadow}
         style={{
+          backgroundColor: dark ? utilstyles.drk_color : utilstyles.pr_color,
           height: height == undefined ? "40px" : height + "px",
           width: width == undefined ? "150px" : width + "px",
         }}

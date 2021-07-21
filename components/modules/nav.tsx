@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { Link as Link2, animateScroll as scroll } from "react-scroll";
 
-const Nav = () => {
+const Nav = ({dark}:{dark: boolean}) => {
   const router = useRouter();
 
   const { NavActive: NavActive, setNavActive: setNavActive } = useContext(
@@ -96,7 +96,7 @@ const Nav = () => {
             <div
               className={navStyles.navElement}
             >
-              <Button dark={false} fontsize="35px" width={300} height={80}>
+              <Button dark={dark} fontsize="35px" width={300} height={80}>
                 Contact
               </Button>
             </div>
