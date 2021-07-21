@@ -4,7 +4,7 @@ import styles from "./home.module.scss";
 import arrow from "./../../assets/Icons/arrow.svg";
 import HomeDetail from "./detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
 import Image from "next/image";
 import Image1 from "../../public/images/image-plate.png";
@@ -12,16 +12,46 @@ import Image2 from "./../../assets/Illustrations/image-home-2-restaurant_eating.
 import Image3 from "./../../assets/Illustrations/image-home-3-crypto.svg";
 import Image4 from "./../../assets/Illustrations/image-home-4-perfect_rating.svg";
 import ScrollIcon from "../../assets/Icons/scroll-icon.svg";
+import { animated as a, useSpring } from "react-spring";
 
 const Home = (): JSX.Element => {
   const { NavbarHeight } = useContext(NavbarHeightContext);
   const size: Size = useWindowSize();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  const headingSpring1 = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    // config: { duration: 1500 },
+  });
+  const headingSpring2 = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 2300,
+    // config: { duration: 3000 },
+  });
+  const headingSpring3 = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 1600,
+    // config: { duration: 1500 },
+  });
+  const headingSpring4 = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 2400,
+    // config: { duration: 1500 },
+  });
 
   const calcHeightSection1 = () => {
     if (size.height < parseInt(utilStyles.hSmall, 10)) {
-      return parseInt(utilStyles.hSmall, 10) - 2*NavbarHeight;
+      return parseInt(utilStyles.hSmall, 10) - 2 * NavbarHeight;
     } else {
-      return size.height - 2*NavbarHeight;
+      return size.height - 2 * NavbarHeight;
     }
   };
   return (
@@ -35,12 +65,14 @@ const Home = (): JSX.Element => {
       <main>
         <section
           className={styles.section1}
-          style={{ height: calcHeightSection1(), marginBottom: NavbarHeight}}
+          style={{ height: calcHeightSection1(), marginBottom: NavbarHeight }}
         >
           <div className={styles.introtext}>
             <h2 className={utilStyles.heading_home_1}>
-              Delicious food? <br /> All currencies? <br /> Good prices? <br />{" "}
-              <span>Octagon!</span>
+              <a.div style={headingSpring1}>Delicious food?</a.div>
+              <a.div style={headingSpring2}>All currencies? </a.div>
+              <a.div style={headingSpring3}>Good prices? </a.div>
+              <a.div style={headingSpring4}>Octagon!</a.div>
             </h2>
             <p className={utilStyles.text_home_1}>
               Whether Meat Lovers or Vegans, our meals make everyone happy!

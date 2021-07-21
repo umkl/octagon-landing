@@ -17,10 +17,9 @@
   se_blue_light: i.$se_blue_light;
   gray: i.$gray;
   gray_text: i.$gray_text;
-  
 }
 
-.headingLg{
+.headingLg {
   font-size: 2.7em;
   font-weight: i.$main_font_weight_800;
   // line-height: 2.4em;
@@ -28,7 +27,7 @@
   // background-color: red;
 }
 
-.headingMd{
+.headingMd {
   font-size: 2.2em;
   font-weight: i.$main_font_weight_800;
   // line-height: 2.4em;
@@ -36,36 +35,35 @@
   // background-color: red;
 }
 
-.headingMdFd{
+.headingMdFd {
   margin: 0;
   font-size: 1.6em;
   font-weight: i.$main_font_weight_700;
   color: i.$gray_text;
 }
 
-.headingSl{
-  
+.headingSl {
 }
-.headingSlFd{
+.headingSlFd {
   margin: 0;
   font-size: 1.2em;
   font-weight: i.$main_font_weight_700;
   color: i.$gray_text;
 }
 
-.textMd{
+.textMd {
   font-weight: i.$main_font_weight_400;
   font-size: 20px;
   color: i.$gray_text;
 }
 
-.textLg{
+.textLg {
   font-weight: i.$main_font_weight_500;
   color: i.$gray_text;
   font-size: 25px;
 }
 
-.textLgBl{
+.textLgBl {
   font-weight: i.$main_font_weight_500;
   color: i.$gray_text;
   font-size: 25px;
@@ -79,16 +77,14 @@
   color: black;
   font-family: i.$main_font;
   @include i.media("<=desktop") {
-    background-color: red;
     font-size: 2rem;
     line-height: 2rem;
   }
-  
+
   @include i.media("<=tablet") {
     font-size: 1.7rem;
     line-height: 1.7rem;
     width: 350px;
-    background-color: peru;
   }
   @include i.media("<=phone") {
     font-size: 1.6rem;
@@ -98,22 +94,16 @@
     font-size: 20px;
     line-height: 20px;
   }
-
-
 }
 
 .text_home_1 {
   font-size: 25px;
   line-height: 30px;
   font-family: i.$main_font;
-  background-color: green;
-
   @include i.media("<=desktop") {
-    background-color: red;
     font-size: 1.4rem;
     line-height: 1.4rem;
   }
-
   @include i.media("<=tablet") {
     max-width: 60%;
     font-size: 20px;

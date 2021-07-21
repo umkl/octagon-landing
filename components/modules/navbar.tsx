@@ -29,7 +29,10 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
     NavActiveContext
   );
 
-  const styles = useSpring({ opacity: isLoaded ? 1 : 0 });
+  const styles = useSpring({
+    opacity: isLoaded ? 1 : 0,
+    // marginTop: isLoaded? "0px": "500px"
+  });
 
   const heightCallback = () => {
     try {
@@ -60,16 +63,13 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
 
   return (
     <>
-      <div className="navbar" ref={navRef}>
+      <a.div style={styles} className="navbar" ref={navRef}>
         {FullNavbar ? (
           <header className={navStyles.container}>
             <>
               <div className={navStyles.logo}>
                 <Link href="/">
-                  <a>
-                    {dark?<OctagonLogoBlack />:<OctagonLogo />}
-                    
-                  </a>
+                  <a>{dark ? <OctagonLogoBlack /> : <OctagonLogo />}</a>
                 </Link>
               </div>
               <div className={navStyles.navigator}>
@@ -99,27 +99,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                     offset={0}
                     duration={500}
                   >
-                    {/* <SuperEllipse
-                      r1={0.03}
-                      r2={0.5}
-                      style={{
-                        height: "40px",
-                        width: "100px",
-                        backgroundColor: navStyles.pr_color,
-                        boxShadow: "0px 0px 10px 10px black",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <span>Contact</span>
-                    </SuperEllipse> */}
-                    <Button
-                      dark={dark}
-                      fontsize="20px"
-                      width={120}
-                      height={40}
-                    >
+                    <Button dark={dark} fontsize="20px" width={120} height={40}>
                       Contact
                     </Button>
                   </Link2>
@@ -144,7 +124,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
             </div>
           </header>
         )}
-      </div>
+      </a.div>
     </>
   );
 };

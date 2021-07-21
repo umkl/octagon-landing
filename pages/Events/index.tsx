@@ -8,25 +8,25 @@ import Event from "./event";
 import { useContext } from "react";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
-import Head from 'next/head';
+import Head from "next/head";
 
 const Events = ({
   allEventsData,
 }: {
   allEventsData: IEventData[];
 }): JSX.Element => {
-  const upcomingEvent: IEventData = allEventsData[0];
+  // const upcomingEvent: IEventData = allEventsData[0];
 
   const { NavbarHeight } = useContext(NavbarHeightContext);
   const size: Size = useWindowSize();
-  const calcHeightSection1 = () => {
-    // if (size.height < parseInt(utilStyles.hSmall, 10)) {
-    //   return parseInt(utilStyles.hSmall, 10) - 2*NavbarHeight;
-    // } else {
-    // }
-    return size.height - NavbarHeight;
-  };
-  calcHeightSection1();
+  // const calcHeightSection1 = () => {
+  //   // if (size.height < parseInt(utilStyles.hSmall, 10)) {
+  //   //   return parseInt(utilStyles.hSmall, 10) - 2*NavbarHeight;
+  //   // } else {
+  //   // }
+  //   return size.height - NavbarHeight;
+  // };
+  // calcHeightSection1();
   return (
     <>
       <Head>
@@ -35,9 +35,9 @@ const Events = ({
       <main>
         <section
           className={`${eventStyles.section}`}
-          style={{
-            minHeight: `${calcHeightSection1()}px`,
-          }}
+          // style={{
+          //   minHeight: `${calcHeightSection1()}px`,
+          // }}
         >
           <h2 className={utilStyles.headingLg}>Unforgettable Moments</h2>
           <h3 className={utilStyles.headingMdFd}>
@@ -45,33 +45,23 @@ const Events = ({
             Events.
           </h3>
           <p className={utilStyles.textMd}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum nisi
-            modi ratione a repellat voluptas molestiae quisquam, quia ipsum
-            fugit?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eius iste sed. Nesciunt officia doloremque fuga porro quam quod sequi cumque odit excepturi voluptates voluptatibus amet aut error, eos corporis?
+          Libero quae voluptatum ad magnam fugiat ab ducimus. Inventore, accusantium! Laudantium suscipit fugit quis voluptates voluptatibus laborum nisi, iste temporibus repudiandae dolorum quos a expedita at? Similique exercitationem quo dolore.
           </p>
-          <div className={eventStyles.upcmngHeader}>Upcoming Event</div>
-          <div className={eventStyles.upcmngEvent}>
-            <Event
-              key={upcomingEvent.id}
-              id={upcomingEvent.id}
-              title={upcomingEvent.title}
-              contentHtml={upcomingEvent.contentHtml}
-              date={upcomingEvent.date}
-            />
-          </div>
-          scroll for more ...
+          <div className={eventStyles.upcmngHeader}>Upcoming Events</div>
         </section>
         {allEventsData.map(({ id, date, title, contentHtml }) => {
-          if (id != upcomingEvent.id) {
-            return (
-              <Event
-                id={id}
-                title={title}
-                contentHtml={contentHtml}
-                date={date}
-              />
-            );
-          }
+          // if (id != upcomingEvent.id) {
+          return (
+            <Event
+              key={id}
+              id={id}
+              title={title}
+              contentHtml={contentHtml}
+              date={date}
+            />
+          );
+          // }
         })}
       </main>
     </>

@@ -36,8 +36,6 @@
 }
 
 .section1 {
-background-color: red;
-
   position: relative;
   width: 90%;
   height: fit-content;
@@ -51,7 +49,6 @@ background-color: red;
   @include i.media("<=tablet") {
     width: 95%;
     flex-direction: column-reverse;
-    background-color: red;
     justify-content: center;
   }
 
@@ -121,15 +118,10 @@ background-color: red;
       align-items: center;
     }
     @include i.media("height<hSmall","<=tablet") {
-      background-color: red;
-
       height: 300px;
       width: 300px;
-
     }
     @include i.media("height<hSmall","<=phone") {
-      background-color: purple;
-
       height: 240px;
       width: 240px;
 
