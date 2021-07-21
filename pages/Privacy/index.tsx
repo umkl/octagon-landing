@@ -11,6 +11,7 @@ function Props(props: Props) {
     <>
       <Head>
         <title>Privacy - Octagon</title>
+        <link rel="icon" href="/Octagon-logo-black.ico"/>
       </Head>
       <main>
         <section>
