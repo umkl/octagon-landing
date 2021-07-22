@@ -26,19 +26,30 @@ const Home = (): JSX.Element => {
 
   const headingSpring1 = useSpring({
     opacity: loaded ? 1 : 0,
+    config: { duration: 1250 },
   });
   const headingSpring2 = useSpring({
     opacity: loaded ? 1 : 0,
+    config: { duration: 1250 },
   });
   const headingSpring3 = useSpring({
     opacity: loaded ? 1 : 0,
+    config: { duration: 1250 },
   });
   const headingSpring4 = useSpring({
     opacity: loaded ? 1 : 0,
+    config: { duration: 1250 },
   });
 
   const fadeInSpring = useSpring({
     opacity: loaded ? 1 : 0,
+    config: { delay: 1250 },
+  });
+
+  const scrollSuggestorSpring = useSpring({
+    opacity: loaded ? 1 : 0,
+    marginBottom: loaded ? "0px" : "300px",
+    config: { delay: 1250 },
   });
 
   const calcHeightSection1 = () => {
@@ -50,12 +61,12 @@ const Home = (): JSX.Element => {
   };
   return (
     <>
-      <div className={styles.scrollSuggestor}>
+      <a.div style={scrollSuggestorSpring} className={styles.scrollSuggestor}>
         <span>find out more about us</span>
         <div className={styles.scrollIcon}>
           <ScrollIcon />
         </div>
-      </div>
+      </a.div>
       <main>
         <section
           className={styles.section1}
@@ -81,14 +92,14 @@ const Home = (): JSX.Element => {
             </a.div>
           </div>
 
-          <div className={styles.image1}>
+          <a.div style={fadeInSpring} className={styles.image1}>
             <Image
               width={700}
               height={500}
               src={Image1}
               alt="Octagon-meal-image"
             />
-          </div>
+          </a.div>
         </section>
         <HomeDetail
           flipped
