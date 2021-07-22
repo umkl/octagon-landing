@@ -27,11 +27,11 @@ function HomeDetail(props: Props) {
         <VisibilitySensor
           partialVisibility
           onChange={(sensorTriggered) => {
-            console.log("kek2" + isVisible);
+            
             if (sensorTriggered && isVisible != true) {
+              console.log("triggered here:" + sensorTriggered);  
               setVisible(true);
-              console.log("kek" + isVisible);
-              console.log(sensorTriggered);
+              
             }
           }}
         >

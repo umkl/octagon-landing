@@ -4,6 +4,7 @@ import OctagonLogo from "./../../assets/Logo/Octagon-logo-poppins-1000BA-baked.s
 import OctagonLogoImage from "./../../assets/Logo/Octagon-logo-poppins-1000BA.png";
 import OctagonLogoBlack from "./../../assets/Logo/Octagon-logo-poppins-000000.svg";
 import SmallOctagonLogo from "./../../assets/Logo/Octagon-logo-1000BA.svg";
+import SmallOctagonLogoBlack from "./../../assets/Logo/Octagon-logo-black.svg";
 import Menu from "./../../assets/Icons/Menu.svg";
 import Menu_Dark from "./../../assets/Icons/Menu-dark.svg";
 import Link from "next/link";
@@ -15,7 +16,7 @@ import { NavActiveContext, NavbarHeightContext } from "./../layouts/layout";
 import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
 import { Link as Link2, animateScroll as scroll } from "react-scroll";
 import Button from "./../elements/button";
-import Image from 'next/image';
+import Image from "next/image";
 
 interface ILayout {
   dark?: boolean;
@@ -53,6 +54,16 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
     marginTop: isLoaded ? 0 : -100,
   });
 
+  const logoSpring = useSpring({
+    opacity: isLoaded?1:0,
+    marginTop: isLoaded ? 0 : -100
+  })
+
+  const navigatorSpring = useSpring({
+    opacity: isLoaded?1:0,
+    marginTop: isLoaded ? 0 : -100
+  })
+
   const [, setY] = useSpring(() => ({ y: 0 }));
 
   const scrollAction = (props): void => {
@@ -69,12 +80,23 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
         {FullNavbar ? (
           <header className={navStyles.container}>
             <>
-              <div className={navStyles.logo}>
+              <a.div style={logoSpring} className={navStyles.logo}>
                 <Link href="/">
-                  <a>{dark ? <OctagonLogoBlack /> : <Image height={180} width={180} src={OctagonLogoImage} alt="Octagon Logo"/>}</a>
+                  <a>
+                    {dark ? (
+                      <OctagonLogoBlack />
+                    ) : (
+                      <Image
+                        height={180}
+                        width={180}
+                        src={OctagonLogoImage}
+                        alt="Octagon Logo"
+                      />
+                    )}
+                  </a>
                 </Link>
-              </div>
-              <div className={navStyles.navigator}>
+              </a.div>
+              <a.div style={navigatorSpring} className={navStyles.navigator}>
                 <div className={navStyles.wrapper}>
                   <ul>
                     <Link href="/">
@@ -106,16 +128,14 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                     </Button>
                   </Link2>
                 </div>
-              </div>
+              </a.div>
             </>
           </header>
         ) : (
           <header className={navStyles.container_small}>
             <div className={navStyles.logo_small}>
               <Link href="/">
-                <a>
-                  <SmallOctagonLogo />
-                </a>
+                <a>{dark ? <SmallOctagonLogoBlack /> : <SmallOctagonLogo />}</a>
               </Link>
             </div>
             <div

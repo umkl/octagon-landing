@@ -8,11 +8,12 @@ interface Props {
   width?: number;
   height?: number;
   fontsize?: string;
+  margin?: number;
 }
 
-function Button({ dark, children, width, height, fontsize }: Props) {
+function Button({ dark, children, width, height, fontsize, margin}: Props) {
   return (
-    <div>
+    <div style={{margin: margin}}>
       <div
         className={styles.shadow}
         style={{

@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import utilStyles from "./../../styles/utils.module.scss";
 
+
 interface Props {}
 
 function Props(props: Props) {
@@ -14,7 +15,7 @@ function Props(props: Props) {
         <link rel="icon" href="/Octagon-logo-black.ico"/>
       </Head>
       <main>
-        <section>
+        <section className={utilStyles.sectionMargin}>
           <div>
             <h2 className={utilStyles.headingLg}>Privacy</h2>
             <h2 className={utilStyles.headingMdFd}>

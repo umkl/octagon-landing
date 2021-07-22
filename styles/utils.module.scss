@@ -1,5 +1,7 @@
 @use './abstracts/index' as i;
 
+
+
 :export {
   small_phone: map-get(i.$breakpoints, "small_phone");
   phone: map-get(i.$breakpoints, "phone");
@@ -22,9 +24,13 @@
 .headingLg {
   font-size: 2.7em;
   font-weight: i.$main_font_weight_800;
-  // line-height: 2.4em;
+  // line-height: 2.7em;
   margin-bottom: 0;
   // background-color: red;
+word-wrap: break-word;
+@include i.media("<=phone"){
+  font-size: 1.7em;
+}
 }
 
 .headingMd {
@@ -40,6 +46,10 @@
   font-size: 1.6em;
   font-weight: i.$main_font_weight_700;
   color: i.$gray_text;
+  @include i.media("<=phone"){
+    font-size: 1.2em;
+  }
+
 }
 
 .headingSl {
@@ -55,6 +65,9 @@
   font-weight: i.$main_font_weight_400;
   font-size: 20px;
   color: i.$gray_text;
+  @include i.media("<=phone"){
+    font-size: 15px;
+  }
 }
 
 .textLg {
@@ -121,10 +134,7 @@
   }
 }
 
-@mixin navHeading {
-  font-size: 40px;
-  line-height: 50px;
-  font-family: i.$main_font;
-  color: black;
-  font-weight: i.$main_font_weight_700;
+
+.sectionMargin{
+  margin: 10px;
 }

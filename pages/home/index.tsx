@@ -13,6 +13,7 @@ import Image3 from "./../../assets/Illustrations/image-home-3-crypto.svg";
 import Image4 from "./../../assets/Illustrations/image-home-4-perfect_rating.svg";
 import ScrollIcon from "../../assets/Icons/scroll-icon.svg";
 import { animated as a, useSpring } from "react-spring";
+import Arrow from "./../../assets/Icons/arrow1.svg";
 
 const Home = (): JSX.Element => {
   const { NavbarHeight } = useContext(NavbarHeightContext);
@@ -24,27 +25,20 @@ const Home = (): JSX.Element => {
   }, []);
 
   const headingSpring1 = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    // config: { duration: 1500 },
+    opacity: loaded ? 1 : 0,
   });
   const headingSpring2 = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    delay: 2300,
-    // config: { duration: 3000 },
+    opacity: loaded ? 1 : 0,
   });
   const headingSpring3 = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    delay: 1600,
-    // config: { duration: 1500 },
+    opacity: loaded ? 1 : 0,
   });
   const headingSpring4 = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    delay: 2400,
-    // config: { duration: 1500 },
+    opacity: loaded ? 1 : 0,
+  });
+
+  const fadeInSpring = useSpring({
+    opacity: loaded ? 1 : 0,
   });
 
   const calcHeightSection1 = () => {
@@ -74,13 +68,17 @@ const Home = (): JSX.Element => {
               <a.div style={headingSpring3}>Good prices? </a.div>
               <a.div style={headingSpring4}>Octagon!</a.div>
             </h2>
-            <p className={utilStyles.text_home_1}>
+            <a.p style={fadeInSpring} className={utilStyles.text_home_1}>
               Whether Meat Lovers or Vegans, our meals make everyone happy!
-            </p>
-            <Button width={200} dark={false}>
-              Reserve now
-            </Button>
-            <div className={styles.arrow}></div>
+            </a.p>
+            <a.div className={styles.clickSection} style={fadeInSpring}>
+              <Button width={200} dark={false}>
+                Reserve now
+              </Button>
+              <a.div style={fadeInSpring} className={styles.arrow}>
+                <Arrow />
+              </a.div>
+            </a.div>
           </div>
 
           <div className={styles.image1}>
