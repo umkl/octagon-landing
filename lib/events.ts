@@ -27,9 +27,9 @@ export function getSortedEventsData() {
   });
   return allEventsData.sort((a, b) => {
     if (a.date < b.date) {
-      return 1;
-    } else {
       return -1;
+    } else {
+      return 1;
     }
   });
 }
@@ -87,9 +87,9 @@ export async function getCompleteSortedEventsData(): Promise<IEventData[]> {
 
   allEventsData.sort((a, b) => {
     if (a.date < b.date) {
-      return 1;
-    } else {
       return -1;
+    } else {
+      return 1;
     }
   });
 

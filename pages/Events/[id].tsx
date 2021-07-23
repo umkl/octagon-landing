@@ -5,8 +5,6 @@ import Date from "../../components/elements/date";
 import utilStyles from "../../styles/utils.module.scss";
 import { GetStaticPaths, GetStaticProps } from "next";
 
-
-
 export default function EventDetail({
   eventData,
 }: {
@@ -18,17 +16,16 @@ export default function EventDetail({
 }) {
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{eventData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{eventData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={eventData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: eventData.contentHtml }} />
-      </article> */}
-      seas
+        <h1 className={utilStyles.headingLg}>{eventData.title}</h1>
+
+        <Date dateString={eventData.date} />
+
+        <div className={utilStyles.textMd} dangerouslySetInnerHTML={{ __html: eventData.contentHtml }} />
+      </article>
     </>
   );
 }
