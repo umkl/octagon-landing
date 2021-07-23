@@ -9,11 +9,10 @@
       "request": "launch",
       "name": "octagon dev",
       "url": "http://localhost:3000",
-      "cwd": "/Users/michaelungar/Documents/octagon-landing",
-      "runtimeArgs": ["run","dev"],
-      "runtimeExecutable": "/usr/local/bin/node",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "/usr/local/bin/npm",
+      "args": ["run","dev"],
       "skipFiles": ["<node_internals>/**"],
-      
     },
     {
       "name": "octagon prod",
