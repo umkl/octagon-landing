@@ -6,12 +6,12 @@
   "configurations": [
     {
       "type": "node",
-      "name": "octagon dev",
       "request": "launch",
+      "name": "octagon dev",
       "url": "http://localhost:3000",
       "cwd": "/Users/michaelungar/Documents/octagon-landing",
       "runtimeArgs": ["run","dev"],
-      "runtimeExecutable": "npm",
+      "runtimeExecutable": "/usr/local/bin/node",
       "skipFiles": ["<node_internals>/**"],
       
     },
@@ -20,7 +20,7 @@
       "request": "launch",
       "runtimeArgs": ["run build"],
       "cwd": "/Users/michaelungar/Documents/octagon-landing",
-      "runtimeExecutable": "npm",
+      "runtimeExecutable": "/usr/local/bin/node",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node"
     },
