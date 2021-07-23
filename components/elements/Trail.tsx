@@ -1,6 +1,6 @@
 import {useTrail, animated as a } from "react-spring";
+import styles from './trail.module.scss'
 import React from "react";
-import styles from './trail.module.css'
 
 const Trail: React.FC<{ open: boolean }> = ({ open, children }) => {
     const items = React.Children.toArray(children)

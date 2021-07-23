@@ -4,16 +4,16 @@
     height: 80px;
     line-height: 80px;
     color: black;
-    font-size: 6em;
+    font-size: 1em;
     font-weight: 800;
-    letter-spacing: -0.05em;
+    // letter-spacing: -0.05em;
     will-change: transform, opacity;
     overflow: hidden;
   }
   
   .trailsText > div {
     padding-right: 0.05em;
-    overflow: hidden;
+    // overflow: hidden;
   }
   
   .container {

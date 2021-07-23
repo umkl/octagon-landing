@@ -1,11 +1,11 @@
-import eventStyles from "./events.module.scss";
+import eventStyles from "./event.module.scss";
 import React, { useState } from "react";
-import { getAllEventIds, getEventData } from "./../../lib/events";
+import { getAllEventIds, getEventData } from "../../lib/events";
 import SuperEllipse from "react-superellipse";
 import utilStyles from "./../../styles/utils.module.scss";
 import Link from "next/link";
 import MelloImage from "./../../assets/Illustrations/image-event-1-mello_live_music.svg";
-import Date from "../../components/elements/date";
+import Date from "./date";
 import { useSpring, animated as a } from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
 

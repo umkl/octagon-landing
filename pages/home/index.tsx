@@ -2,7 +2,7 @@ import utilStyles from "./../../styles/utils.module.scss";
 import Button from "../../components/elements/button";
 import styles from "./home.module.scss";
 import arrow from "./../../assets/Icons/arrow.svg";
-import HomeDetail from "./detail";
+import HomeDetail from "../../components/elements/detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext, useEffect, useState } from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
@@ -12,11 +12,10 @@ import Image2 from "./../../assets/Illustrations/image-home-2-restaurant_eating.
 import Image3 from "./../../assets/Illustrations/image-home-3-crypto.svg";
 import Image4 from "./../../assets/Illustrations/image-home-4-perfect_rating.svg";
 import ScrollIcon from "../../assets/Icons/scroll-icon.svg";
-import { animated as a, useSpring, useTrail} from "react-spring";
+import { animated as a, useSpring, useTrail } from "react-spring";
 import Arrow from "./../../assets/Icons/arrow1.svg";
 import React from "react";
 import Trail from "./../../components/elements/Trail";
-
 
 const Home = (): JSX.Element => {
   const { NavbarHeight } = useContext(NavbarHeightContext);
@@ -61,12 +60,17 @@ const Home = (): JSX.Element => {
   //   marginLeft: loaded ? "0px" : "-400px",
   //   config: { duration: 350 },
   // });
-
+  const delay = 2000;
+  const circles = [{ cx: 1 }, { cx: 4 }, { cx: 7 }];
   const fadeInSpring = useSpring({
-    opacity: loaded ? 1 : 0,
-    
-    // config: { duration: 1250 },
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: delay,
+    config:{duration: 2000}
   });
+
+  // const delay = 2000;
+  const radius = useSpring({ value: 1, from: { value: 0 }, delay: delay });
 
   const scrollSuggestorSpring = useSpring({
     opacity: loaded ? 1 : 0,

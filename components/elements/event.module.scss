@@ -1,0 +1,85 @@
+@use './../../styles/abstracts/index' as i;
+@use './../../styles/utils.module.scss' as u;
+
+
+
+.eventContainer {
+    // background-color: red;
+    margin: 20px 0;
+    width: 1000px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    @include i.media("<=desktop"){
+      width: 90%;
+    }
+  
+    @include i.media("<=tablet"){
+      width: 500px;
+    }
+    @include i.media("<=phone"){
+      width: 100%;
+    }
+  
+    .eventContent{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      position: relative;
+  
+      @include i.media("<=phone"){
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .textpart {
+        margin: 20px;
+        width: 50%;
+        width: 70%;
+        .title {
+          color: white;
+          font-size: 40px;
+          margin: 0;
+          font-weight: i.$main_font_weight_700;
+          
+          @include i.media("<=tablet"){
+            font-size: 30px;
+            line-height: 30px;
+            
+          }
+        }
+        .contentHTML {
+          p{
+            margin: 0;
+          }
+          color: white;
+          font-size: 20px;
+          font-weight: i.$main_font_weight_400;
+          // margin-top: -20px;
+          @include i.media("<=tablet"){
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+      .imagePart {
+        margin: 40px;
+        position: relative;
+        width: 30%;
+  
+  
+        @include i.media("<=tablet"){
+          margin: 30px;
+          // width: 20%
+          display: none;
+        }
+        @include i.media("<=phone"){
+          margin: 30px;
+          display:block;
+          // width: 20%
+          // display: none;
+        }
+      }
+    }
+  }
+  

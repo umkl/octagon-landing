@@ -1,4 +1,4 @@
-import homeStyles from "./home.module.scss";
+import detailStyles from "./detail.module.scss";
 import React, { useState } from "react";
 import { useSpring, animated as a, useTransition } from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
@@ -18,6 +18,7 @@ function HomeDetail(props: Props) {
   const textSpring = useSpring({
     opacity: isVisible ? 1 : 0,
     marginLeft: isVisible ? "0px" : `${flipped ? "+" : "-"}500px`,
+    // delay: 1000,
   });
   // const textSpring = useTransition(isVisible,{
   //   from: {opacity: 0},
@@ -44,20 +45,20 @@ function HomeDetail(props: Props) {
       }}
     >
       <section
-        className={homeStyles.detailSection}
+        className={detailStyles.detailSection}
         style={{ flexDirection: flipped ? "row-reverse" : "row" }}
       >
-        <div className={homeStyles.textpart}>
+        <div className={detailStyles.textpart}>
           <a.div
             style={textSpring}
-            className={homeStyles.animatedTextContainer}
+            className={detailStyles.animatedTextContainer}
           >
-            <span className={homeStyles.teaser}>{teaser}</span>
-            <span className={homeStyles.header}>{header}</span>
-            <span className={homeStyles.text}>{text}</span>
+            <span className={detailStyles.teaser}>{teaser}</span>
+            <span className={detailStyles.header}>{header}</span>
+            <span className={detailStyles.text}>{text}</span>
           </a.div>
         </div>
-        <div className={homeStyles.image}>
+        <div className={detailStyles.image}>
           <Image />
         </div>
       </section>

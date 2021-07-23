@@ -4,7 +4,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getCompleteSortedEventsData, IEventData } from "../../lib/events";
 import eventStyles from "./events.module.scss";
-import Event from "./event";
+import Event from "../../components/elements/event";
 import { useContext } from "react";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
