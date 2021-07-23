@@ -5,20 +5,27 @@
   position: fixed;
   bottom: 10px;
   top: calc(90vh - 10px);
-  @include i.media("height<hSmall", "portrait") {
-    bottom: unset;
-    top: calc(i.$hsmall - 10px);
-  }
-  @include i.centerX;
   margin: 10px 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  @include i.centerX;
+  @include i.media("height<hSmall", "portrait") {
+    bottom: unset;
+    top: calc(i.$hsmall - 10px);
+  }
+  @include i.media("height<hSmall") {
+    bottom: unset;
+    top: 515px;
+  }
+  @include i.media("<=small_phone") {
+    width: i.$small_phone;
+    left: unset;
+    transform: unset;
+  }
   span {
     margin: 5px;
-
     font-weight: i.$main_font_weight_600;
     font-size: 10px;
     color: i.$pr_color;
@@ -35,41 +42,25 @@
   height: fit-content;
   display: flex;
   flex-direction: row;
-
   @include i.centerX;
-  
-
-  //width
   @include i.media("<=tablet") {
     width: 95%;
     flex-direction: column-reverse;
     justify-content: center;
   }
-
   @include i.media("<=desktop") {
     width: 95%;
   }
-
   @include i.media(">=desktop") {
     width: 1000px;
   }
-  //height
   @include i.media("height<hLarge") {
     height: i.$hlarge;
   }
-
-  
-
   @include i.media("height<hSmall", "<=phone") {
     align-items: flex-start;
     justify-content: flex-end;
   }
-
-  // @include i.media("<=small_phone"){
-  //   background-color: ;
-  //   width: i.$small_phone;
-  // }
-
   .introtext {
     width: 50%;
     top: 50%;
@@ -85,13 +76,10 @@
       top: 0;
       transform: translateY(0);
     }
-    .clickSection{
+    .clickSection {
       display: flex;
       position: relative;
-      
-      // background-color: red;
-      .arrow{
-        // background-color: red;
+      .arrow {
         position: absolute;
         left: 200px;
         bottom: -20px;
@@ -114,24 +102,17 @@
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-
-      height: 600px;
       width: 50%;
-
+      z-index: -99999;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     @include i.media("<=tablet") {
       position: relative;
       transform: translateX(-50%);
       left: 50%;
-
       width: 300px;
-      // height: 200px;
-      // background-color: green;
-      // background-color: blue;
       display: flex;
       justify-content: center;
       align-items: center;

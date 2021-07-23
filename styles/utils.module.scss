@@ -1,7 +1,5 @@
 @use './abstracts/index' as i;
 
-
-
 :export {
   small_phone: map-get(i.$breakpoints, "small_phone");
   phone: map-get(i.$breakpoints, "phone");
@@ -24,21 +22,17 @@
 .headingLg {
   font-size: 2.7em;
   font-weight: i.$main_font_weight_800;
-  // line-height: 2.7em;
   margin-bottom: 0;
-  // background-color: red;
-word-wrap: break-word;
-@include i.media("<=phone"){
-  font-size: 1.7em;
-}
+  word-wrap: break-word;
+  @include i.media("<=phone") {
+    font-size: 1.7em;
+  }
 }
 
 .headingMd {
   font-size: 2.2em;
   font-weight: i.$main_font_weight_800;
-  // line-height: 2.4em;
   margin-bottom: 0;
-  // background-color: red;
 }
 
 .headingMdFd {
@@ -46,14 +40,11 @@ word-wrap: break-word;
   font-size: 1.6em;
   font-weight: i.$main_font_weight_700;
   color: i.$gray_text;
-  @include i.media("<=phone"){
+  @include i.media("<=phone") {
     font-size: 1.2em;
   }
-
 }
 
-.headingSl {
-}
 .headingSlFd {
   margin: 0;
   font-size: 1.2em;
@@ -65,7 +56,7 @@ word-wrap: break-word;
   font-weight: i.$main_font_weight_400;
   font-size: 20px;
   color: i.$gray_text;
-  @include i.media("<=phone"){
+  @include i.media("<=phone") {
     font-size: 15px;
   }
 }
@@ -134,7 +125,6 @@ word-wrap: break-word;
   }
 }
 
-
-.sectionMargin{
+.sectionMargin {
   margin: 10px;
 }

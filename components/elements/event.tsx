@@ -29,10 +29,10 @@ export const Event = (eventData: IEvent) => {
   return (
     <VisibilitySensor
       partialVisibility
-      onChange={(sensorTriggered)=>{
-          if(sensorTriggered && isVisible != true){
-            setVisible(true);
-          }
+      onChange={(sensorTriggered) => {
+        if (sensorTriggered && isVisible != true) {
+          setVisible(true);
+        }
       }}
     >
       <a.div style={springProps} className={eventStyles.eventContainer}>
