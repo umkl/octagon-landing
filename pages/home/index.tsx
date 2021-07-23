@@ -2,7 +2,7 @@ import utilStyles from "./../../styles/utils.module.scss";
 import Button from "../../components/elements/button";
 import styles from "./home.module.scss";
 import arrow from "./../../assets/Icons/arrow.svg";
-import HomeDetail from "../../components/elements/detail";
+import HomeDetail from "./../../components/elements/detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext, useEffect, useState } from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
@@ -12,10 +12,8 @@ import Image2 from "./../../assets/Illustrations/image-home-2-restaurant_eating.
 import Image3 from "./../../assets/Illustrations/image-home-3-crypto.svg";
 import Image4 from "./../../assets/Illustrations/image-home-4-perfect_rating.svg";
 import ScrollIcon from "../../assets/Icons/scroll-icon.svg";
-import { animated as a, useSpring, useTrail } from "react-spring";
+import { animated as a, useSpring, config } from "react-spring";
 import Arrow from "./../../assets/Icons/arrow1.svg";
-import React from "react";
-import Trail from "./../../components/elements/Trail";
 
 const Home = (): JSX.Element => {
   const { NavbarHeight } = useContext(NavbarHeightContext);
@@ -32,45 +30,31 @@ const Home = (): JSX.Element => {
   //   config: { duration: 550 },
   // });
 
-  // const headingSpring1 = () => {
-  //   const x = setTimeout(() => {
-  //     return (
-  //       useSpring({
-  //         from: { opacity: 0, marginLeft: "-400px" },
-  //         to: { opacity: 1, marginLeft: "0px" },
-  //       }),
-  //       2234234000
-  //     );
-  //   });
-  //   return x;
-  // };
-
-  // const headingSpring2 = useSpring({
-  //   opacity: loaded ? 1 : 0,
-  //   marginLeft: loaded ? "0px" : "-400px",
-  //   config: { duration: 750 },
-  // });
-  // const headingSpring3 = useSpring({
-  //   opacity: loaded ? 1 : 0,
-  //   marginLeft: loaded ? "0px" : "-400px",
-  //   config: { duration: 450 },
-  // });
-  // const headingSpring4 = useSpring({
-  //   opacity: loaded ? 1 : 0,
-  //   marginLeft: loaded ? "0px" : "-400px",
-  //   config: { duration: 350 },
-  // });
-  const delay = 2000;
-  const circles = [{ cx: 1 }, { cx: 4 }, { cx: 7 }];
-  const fadeInSpring = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-    delay: delay,
-    config:{duration: 2000}
+  const headingSpring1 = useSpring({
+    from: { opacity: 0, marginLeft:  "-400px"},
+    to: {opacity: 1, marginLeft:"0px"},
+    config: {tension: 120, friction: 12},
+  });
+  const headingSpring2 = useSpring({
+    opacity: loaded ? 1 : 0,
+    marginLeft: loaded ? "0px" : "-400px",
+    config: {tension: 110, friction: 12},
+  });
+  const headingSpring3 = useSpring({
+    opacity: loaded ? 1 : 0,
+    marginLeft: loaded ? "0px" : "-400px",
+    config: {tension: 100, friction: 12},
+  });
+  const headingSpring4 = useSpring({
+    opacity: loaded ? 1 : 0,
+    marginLeft: loaded ? "0px" : "-400px",
+    config: {tension: 90, friction: 12},
   });
 
-  // const delay = 2000;
-  const radius = useSpring({ value: 1, from: { value: 0 }, delay: delay });
+  const fadeInSpring = useSpring({
+    opacity: loaded ? 1 : 0,
+    config: { duration: 1250, ...config.slow },
+  });
 
   const scrollSuggestorSpring = useSpring({
     opacity: loaded ? 1 : 0,
@@ -100,12 +84,10 @@ const Home = (): JSX.Element => {
         >
           <div className={styles.introtext}>
             <h2 className={utilStyles.heading_home_1}>
-              <Trail open={loaded}>
-                <div className={styles.trailDiv}>Delicious food?</div>
-                <div className={styles.trailDiv}>All currencies? </div>
-                <div className={styles.trailDiv}>Good prices? </div>
-                <div className={styles.trailDiv}>Octagon!</div>
-              </Trail>
+              <a.div style={headingSpring1}>Delicious food?</a.div>
+              <a.div style={headingSpring2}>All currencies? </a.div>
+              <a.div style={headingSpring3}>Good prices? </a.div>
+              <a.div style={headingSpring4}>Octagon!</a.div>
             </h2>
             <a.p style={fadeInSpring} className={utilStyles.text_home_1}>
               Whether Meat Lovers or Vegans, our meals make everyone happy!

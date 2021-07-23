@@ -1,20 +1,15 @@
 @use './../../styles/abstracts/index' as i;
 @use './../../styles/utils.module.scss' as u;
 
-
-
 .scrollSuggestor {
   position: fixed;
-
   bottom: 10px;
   top: calc(90vh - 10px);
   @include i.media("height<hSmall", "portrait") {
     bottom: unset;
     top: calc(i.$hsmall - 10px);
-    // z-index: 9999;
   }
   @include i.centerX;
-
   margin: 10px 0;
 
   display: flex;
@@ -35,11 +30,9 @@
 }
 
 .section1 {
-  
   position: relative;
   width: 90%;
   height: fit-content;
-  // overflow: hidden;
   display: flex;
   flex-direction: row;
 
@@ -72,13 +65,17 @@
     justify-content: flex-end;
   }
 
+  // @include i.media("<=small_phone"){
+  //   background-color: ;
+  //   width: i.$small_phone;
+  // }
+
   .introtext {
     width: 50%;
     top: 50%;
     transform: translateY(-50%);
     position: relative;
-    height: 500px;
-    // background-color: green;
+    height: fit-content;
     @include i.media("<=tablet") {
       width: 100%;
       display: flex;
@@ -88,14 +85,6 @@
       top: 0;
       transform: translateY(0);
     }
-    .trailDiv{
-      // background-color: red;
-      height: 60px;
-      position: absolute;
-      overflow: hidden;
-      background-color: gray;
-    }
-
     .clickSection{
       display: flex;
       position: relative;

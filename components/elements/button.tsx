@@ -33,6 +33,7 @@ function Button({ dark, children, width, height, fontsize, margin}: Props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          cursor: "pointer"
         }}
       >
         <p className={styles.text} style={{ fontSize: fontsize ?? "20px" }}>

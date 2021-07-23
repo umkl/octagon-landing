@@ -29,7 +29,9 @@
 
 
 .main{
-  
+  @include i.media("<=small_phone"){
+    width: i.$small_phone;
+  }
 }
 
 .backToHome {

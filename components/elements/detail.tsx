@@ -1,8 +1,7 @@
 import detailStyles from "./detail.module.scss";
 import React, { useState } from "react";
-import { useSpring, animated as a, useTransition } from "react-spring";
+import { useSpring, animated as a, useTransition, config} from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
-import { config } from "node:process";
 
 interface Props {
   teaser: string;
@@ -18,25 +17,11 @@ function HomeDetail(props: Props) {
   const textSpring = useSpring({
     opacity: isVisible ? 1 : 0,
     marginLeft: isVisible ? "0px" : `${flipped ? "+" : "-"}500px`,
-    // delay: 1000,
+    config: config.molasses
   });
-  // const textSpring = useTransition(isVisible,{
-  //   from: {opacity: 0},
-  //   to:{opacity: 1},
-  // });
-
-  // const transitions = useTransition(items, {
-  //   from: { opacity: 0 },
-  //   enter: { opacity: 1 },
-  //   leave: { opacity: 0 },
-  //   delay: 200,
-  //   config: config.molasses,
-  //   onRest: () => setItems([]),
-  // })
 
   return (
     <VisibilitySensor
-      partialVisibility
       onChange={(sensorTriggered) => {
         if (sensorTriggered && isVisible != true) {
           console.log("triggered here:" + sensorTriggered);

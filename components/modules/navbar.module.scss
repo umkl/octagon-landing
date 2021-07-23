@@ -8,8 +8,6 @@
   .logo {
     height: 180px;
     min-width: 180px;
-    // color:black;
-    // background-color: white;
     margin: 0 10px;
   }
 
@@ -41,7 +39,6 @@
       }
       .contact {
         cursor: pointer;
-        // box-shadow: 0px 0px 10px 10px i.$pr_color;
         margin: 0 0 0 10px;
         display: flex;
         align-items: center;
@@ -53,11 +50,6 @@
         $c: i.$pr_color;
         width: $w;
         height: $h;
-
-        // @include i.center;
-
-        // @include i.super-rectangle($w, $h, $c);
-        // @include i.shadow-plain( $w, $h, black);
       }
     }
   }
@@ -65,11 +57,11 @@
 
 .container_small {
   height: 90px;
-  @include i.media("<phone") {
-    width: 300px;
-  }
   display: flex;
   justify-content: space-between;
+  @include i.media("<small_phone") {
+    width: i.$small_phone;
+  }
   .logo_small {
     height: 50px;
     width: 50px;
