@@ -1,10 +1,9 @@
 import navStyles from "./navbar.module.scss";
 import utilStyles from "./../../styles/utils.module.scss";
-import OctagonLogo from "./../../assets/Logo/Octagon-logo-poppins-1000BA-baked.svg";
 import OctagonLogoImage from "./../../assets/Logo/Octagon-logo-poppins-1000BA.png";
-import OctagonLogoBlack from "./../../assets/Logo/Octagon-logo-poppins-000000.svg";
-import SmallOctagonLogo from "./../../assets/Logo/Octagon-logo-1000BA.svg";
-import SmallOctagonLogoBlack from "./../../assets/Logo/Octagon-logo-black.svg";
+import OctagonLogoBlackImage from "./../../assets/Logo/Octagon-logo-poppins-000000.png";
+import SmallOctagonLogoImage from "./../../assets/Logo/Octagon-logo-1000BA.png";
+import SmallOctagonLogoBlackImage from "./../../assets/Logo/Octagon-logo-black.png";
 import Menu from "./../../assets/Icons/Menu.svg";
 import Menu_Dark from "./../../assets/Icons/Menu-dark.svg";
 import Link from "next/link";
@@ -17,12 +16,14 @@ import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
 import { Link as Link2, animateScroll as scroll } from "react-scroll";
 import Button from "./../elements/button";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 interface ILayout {
   dark?: boolean;
 }
 
 const Navbar = ({ dark }: ILayout): JSX.Element => {
+  const router = useRouter();
   const [isLoaded, setLoaded] = useState<boolean>(false);
   const size: Size = useWindowSize();
   const navRef = useRef(null);
@@ -33,16 +34,13 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
   );
 
   const styles = useSpring({
-    opacity: isLoaded ? 1 : 0,
-    // marginTop: isLoaded? "0px": "500px"
+    opacity: isLoaded ? 1 : 0
   });
 
   const heightCallback = () => {
     try {
       setNavbarHeight(navRef.current.clientHeight);
-    } catch (e) {
-      console.log("null error");
-    }
+    } catch (e) {}
   };
   useResizeObserver({ callback: heightCallback, element: navRef });
   useEffect(() => {
@@ -55,14 +53,14 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
   });
 
   const logoSpring = useSpring({
-    opacity: isLoaded?1:0,
-    marginTop: isLoaded ? 0 : -100
-  })
+    opacity: isLoaded ? 1 : 0,
+    marginTop: isLoaded ? 0 : -100,
+  });
 
   const navigatorSpring = useSpring({
-    opacity: isLoaded?1:0,
-    marginTop: isLoaded ? 0 : -100
-  })
+    opacity: isLoaded ? 1 : 0,
+    marginTop: isLoaded ? 0 : -100,
+  });
 
   const [, setY] = useSpring(() => ({ y: 0 }));
 
@@ -84,7 +82,12 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                 <Link href="/">
                   <a>
                     {dark ? (
-                      <OctagonLogoBlack />
+                      <Image
+                        height={180}
+                        width={180}
+                        src={OctagonLogoBlackImage}
+                        alt="Octagon Logo"
+                      />
                     ) : (
                       <Image
                         height={180}
@@ -101,17 +104,45 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
                   <ul>
                     <Link href="/">
                       <a>
-                        <li className={navStyles.pagenavigators}>Home</li>
+                        <li
+                          className={navStyles.pagenavigators}
+                          style={{
+                            textDecoration:
+                              router.pathname == "/" ? "underline" : "none",
+                          }}
+                        >
+                          Home
+                        </li>
                       </a>
                     </Link>
                     <Link href="/Events">
                       <a>
-                        <li className={navStyles.pagenavigators}>Events</li>
+                        <li
+                          className={navStyles.pagenavigators}
+                          style={{
+                            textDecoration:
+                              router.pathname == "/Events"
+                                ? "underline"
+                                : "none",
+                          }}
+                        >
+                          Events
+                        </li>
                       </a>
                     </Link>
                     <Link href="/About">
                       <a>
-                        <li className={navStyles.pagenavigators}>About</li>
+                        <li
+                          className={navStyles.pagenavigators}
+                          style={{
+                            textDecoration:
+                              router.pathname == "/About"
+                                ? "underline"
+                                : "none",
+                          }}
+                        >
+                          About
+                        </li>
                       </a>
                     </Link>
                   </ul>
@@ -135,7 +166,23 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
           <header className={navStyles.container_small}>
             <div className={navStyles.logo_small}>
               <Link href="/">
-                <a>{dark ? <SmallOctagonLogoBlack /> : <SmallOctagonLogo />}</a>
+                <a>
+                  {dark ? (
+                    <Image
+                      height={180}
+                      width={180}
+                      src={SmallOctagonLogoBlackImage}
+                      alt="Octagon Logo Black"
+                    />
+                  ) : (
+                    <Image
+                      height={180}
+                      width={180}
+                      src={SmallOctagonLogoImage}
+                      alt="Octagon Logo"
+                    />
+                  )}
+                </a>
               </Link>
             </div>
             <div

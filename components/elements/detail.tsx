@@ -17,14 +17,13 @@ function HomeDetail(props: Props) {
   const textSpring = useSpring({
     opacity: isVisible ? 1 : 0,
     marginLeft: isVisible ? "0px" : `${flipped ? "+" : "-"}500px`,
-    config: config.molasses
+    config: { tension: 600, friction: 100 }
   });
 
   return (
     <VisibilitySensor
       onChange={(sensorTriggered) => {
         if (sensorTriggered && isVisible != true) {
-          console.log("triggered here:" + sensorTriggered);
           setVisible(true);
         }
       }}

@@ -65,6 +65,9 @@
   font-weight: i.$main_font_weight_500;
   color: i.$gray_text;
   font-size: 25px;
+  @include i.media("<=phone") {
+    font-size: 20px;
+  }
 }
 
 .textLgBl {
@@ -72,6 +75,9 @@
   color: i.$gray_text;
   font-size: 25px;
   color: black;
+  @include i.media("<=phone") {
+    font-size: 20px;
+  }
 }
 
 .heading_home_1 {

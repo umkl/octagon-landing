@@ -3,9 +3,7 @@ import styles from "./date.module.scss";
 import CalendarIcon from "./../../assets/Icons/Calendar.svg";
 import ClockIcon from "./../../assets/Icons/Clock.svg";
 
-//just returns input in form of time element
 export default function Date({ dateString }: { dateString: string }) {
-  console.log("date" + dateString);
   const date = parseISO(dateString);
   return (
     <div className={styles.container}>

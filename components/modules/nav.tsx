@@ -21,7 +21,6 @@ const Nav = ({ dark }: { dark: boolean }) => {
   const navSpring = useSpring({
     opacity: NavActive ? 1 : 0,
     marginTop: NavActive ? "0px" : "-500px",
-    // display: NavActive ? "block" : "none",
   });
 
   return (
@@ -97,7 +96,7 @@ const Nav = ({ dark }: { dark: boolean }) => {
             duration={500}
           >
             <div className={navStyles.navElement}>
-              <Button margin={5} dark={dark} fontsize={size.width<parseInt(utilStyles.large_phone, 10)?"20px":"35px"} width={size.width<parseInt(utilStyles.large_phone, 10)?150:300} height={size.width<parseInt(utilStyles.large_phone, 10)?50:80} >
+              <Button margin={5} dark={dark} fontsize={size.width<parseInt(utilStyles.large_phone, 10)?"20px":"35px"} width={size.width<parseInt(utilStyles.large_phone, 10)?150:280} height={size.width<parseInt(utilStyles.large_phone, 10)?50:80} >
                 Contact
               </Button>
             </div>
