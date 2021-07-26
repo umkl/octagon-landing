@@ -1,6 +1,12 @@
-# 🚀 Landing page for Octagon.
 
-## Introduction
+<div align="center">
+    <img alt="Octagon Logo" src="assets/Logo/Octagon-logo-poppins-1000BA-README.png" width="200"/>
+    <h1>Octagon-frontend</h1>
+    Landing-page for Octagon
+    <br/>
+    <br/>
+</div>
+
 
 ## Execute the Project
 
@@ -8,7 +14,16 @@
 
 > I also assume bash is being used
 
+Clone the GitHub repository with `git clone`.
+
+```
+$ git clone https://github.com/ungarmichael/octagon-landing.git
+cd octagon-landing
+```
+
+
 For creating a production-version of the project run:
+
 ```
 $ npm run build
 ```
@@ -41,12 +56,12 @@ Illustrations where copied from [undraw.co](https://undraw.co) and  [vecteezy.co
     * _gray-matter_
     * _remark_
     * _react-visibility-sensor_
-    * the rest can be viewed in the _package.json_ file
+    * other libraries can be viewed in the _/package.json_ file
 * CSS-extensions
     * _Sass_ combined with
         * inline_media 
 * Version-control
-    * Git
+    * _Git_
 
 
 

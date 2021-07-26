@@ -2,7 +2,7 @@ import utilStyles from "./../../styles/utils.module.scss";
 import Button from "../../components/elements/button";
 import styles from "./home.module.scss";
 import arrow from "./../../assets/Icons/arrow.svg";
-import HomeDetail from "./../../components/elements/detail";
+import HomeDetail from "../../components/elements/detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext, useEffect, useState } from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
