@@ -1,8 +1,7 @@
 
 <div align="center">
     <img alt="Octagon Logo" src="assets/Logo/Octagon-logo-poppins-1000BA-README.png" width="200"/>
-    <h1>Octagon-frontend</h1>
-    Landing-page for Octagon
+    <h1>Octagon-landing</h1>
     <br/>
     <br/>
 </div>
