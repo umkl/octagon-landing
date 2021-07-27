@@ -1,0 +1,14 @@
+{
+  "/404": "pages/404.html",
+  "/500": "pages/500.html",
+  "/About": "pages/About.html",
+  "/Events/[id]": "pages/Events/[id].js",
+  "/Events": "pages/Events.js",
+  "/Home": "pages/Home.html",
+  "/Imprint": "pages/Imprint.html",
+  "/Privacy": "pages/Privacy.html",
+  "/_app": "pages/_app.js",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js"
+}

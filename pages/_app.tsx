@@ -5,7 +5,8 @@ import { useRouter, NextRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router: NextRouter = useRouter();
-  const legal: boolean = router.pathname.includes("Imprint") || router.pathname.includes("Privacy");
+  const legal: boolean =
+    router.pathname.includes("Imprint") || router.pathname.includes("Privacy");
 
   return (
     <Layout dark={legal}>

@@ -1,12 +1,15 @@
 import Head from "next/head";
-import styles from "./layout.module.scss";
 import { Context, ReactNode, useState } from "react";
-import Footer from "../modules/footer";
-import Navbar from "../modules/navbar";
+import styles from "./layout.module.scss";
 import React from "react";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
 import { useSpring, animated as a } from "react-spring";
+
 import Nav from "./../modules/nav";
+import Navbar from "../modules/navbar";
+import Footer from "../modules/footer";
+
+
 
 interface ILayout {
   children: ReactNode;
@@ -74,3 +77,7 @@ export default function Layout({ children,dark }: ILayout) {
     </NavActiveContext.Provider>
   );
 }
+function dynamic(arg0: () => Promise<typeof import("../modules/footer")>) {
+  throw new Error("Function not implemented.");
+}
+
