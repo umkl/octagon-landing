@@ -14,26 +14,29 @@
 Clone the GitHub repository with `git clone`.
 
 ```
-$ git clone https://github.com/ungarmichael/octagon-landing.git
+git clone https://github.com/ungarmichael/octagon-landing.git
+
+```
+```
 cd octagon-landing
 ```
 
 For installing all necessary dependencies run:
 
 ```
-$ npm i
+npm i
 ```
 
 
 For creating a production-version of the project run:
 
 ```
-$ npm run build
+npm run build
 ```
 
 For starting the server(production version):
 ```
-$ npm start
+npm start
 ```
 
 Now the Project can be viewed on `http://localhost:3000`.
