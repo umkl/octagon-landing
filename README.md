@@ -15,7 +15,6 @@ Clone the GitHub repository with `git clone`.
 
 ```
 git clone https://github.com/ungarmichael/octagon-landing.git
-
 ```
 ```
 cd octagon-landing
