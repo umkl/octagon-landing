@@ -80,6 +80,7 @@ Illustrations where copied from [undraw.co](https://undraw.co) and  [vecteezy.co
     * _Git_
 
 
-
+If you encounter any unwanted behaviours, please report them to 
+    -> <a href='mailto:ungarmichael.mail@gmail.com'>ungarmichael.mail@gmail.com</a>.
 
 
