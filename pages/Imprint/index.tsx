@@ -2,11 +2,7 @@ import Head from "next/head";
 import React from "react";
 import utilStyles from "./../../styles/utils.module.scss";
 
-interface Props {}
-
-function Props(props: Props) {
-  const {} = props;
-
+function Imprint() {
   return (
     <>
       <Head>
@@ -69,4 +65,4 @@ function Props(props: Props) {
   );
 }
 
-export default Props;
+export default Imprint;

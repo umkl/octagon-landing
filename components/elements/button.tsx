@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react";
 import SuperEllipse from "react-superellipse";
-import utilstyles from "./../../styles/utils.module.scss";
 import styles from "./button.module.scss";
+import utilstyles from "./../../styles/utils.module.scss";
+
 interface Props {
   dark: boolean;
   children: ReactNode;

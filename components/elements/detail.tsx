@@ -1,6 +1,6 @@
 import detailStyles from "./detail.module.scss";
 import React, { useState } from "react";
-import { useSpring, animated as a, useTransition, config} from "react-spring";
+import { useSpring, animated as a, useTransition, config } from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
 
 interface Props {
@@ -17,7 +17,7 @@ function HomeDetail(props: Props) {
   const textSpring = useSpring({
     opacity: isVisible ? 1 : 0,
     marginLeft: isVisible ? "0px" : `${flipped ? "+" : "-"}500px`,
-    config: { tension: 600, friction: 100 }
+    config: { tension: 600, friction: 100 },
   });
 
   return (

@@ -1,7 +1,6 @@
 import { animated as a, useSpring } from "react-spring";
 import navStyles from "./nav.module.scss";
 import utilStyles from "./../../styles/utils.module.scss";
-
 import { useContext } from "react";
 import { NavActiveContext } from "./../layouts/layout";
 import SuperEllipse from "react-superellipse";
@@ -10,7 +9,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { Link as Link2, animateScroll as scroll } from "react-scroll";
 import useWindowSize, { Size } from "../../hooks/useWindowSize";
-
 
 const Nav = ({ dark }: { dark: boolean }) => {
   const router = useRouter();
@@ -96,7 +94,21 @@ const Nav = ({ dark }: { dark: boolean }) => {
             duration={500}
           >
             <div className={navStyles.navElement}>
-              <Button margin={5} dark={dark} fontsize={size.width<parseInt(utilStyles.large_phone, 10)?"20px":"35px"} width={size.width<parseInt(utilStyles.large_phone, 10)?150:280} height={size.width<parseInt(utilStyles.large_phone, 10)?50:80} >
+              <Button
+                margin={5}
+                dark={dark}
+                fontsize={
+                  size.width < parseInt(utilStyles.large_phone, 10)
+                    ? "20px"
+                    : "35px"
+                }
+                width={
+                  size.width < parseInt(utilStyles.large_phone, 10) ? 150 : 280
+                }
+                height={
+                  size.width < parseInt(utilStyles.large_phone, 10) ? 50 : 80
+                }
+              >
                 Contact
               </Button>
             </div>

@@ -2,16 +2,14 @@
 @use './../../styles/utils.module.scss' as u;
 
 .eventContainer {
-  // background-color: red;
-  margin: 20px 0;
-  width: 1000px;
   position: relative;
+  width: 1000px;
   left: 50%;
   transform: translateX(-50%);
+  margin: 20px 0;
   @include i.media("<=desktop") {
     width: 90%;
   }
-
   @include i.media("<=tablet") {
     width: 500px;
   }
@@ -19,71 +17,53 @@
     width: 100%;
   }
 
-  // .shadow {
-  //   background-color: i.$pr_color;
-  //   height: 95%;
-  //   width: 900%;
-  //   @include i.center;
-  //   border-radius: 20px;
-  //   filter: blur(10px);
-  //   position: absolute;
-  // }
-
   .eventContent {
+    position: relative;
+    display: flex;
     height: 100%;
     width: 100%;
-    display: flex;
-    position: relative;
-
     @include i.media("<=phone") {
       display: flex;
       flex-direction: column;
     }
-
     .textpart {
-      margin: 20px;
-      width: 50%;
       width: 70%;
+      margin: 20px;
       .title {
         color: white;
-        font-size: 40px;
         margin: 0;
+        font-size: 40px;
         font-weight: i.$main_font_weight_700;
-
         @include i.media("<=tablet") {
           font-size: 30px;
           line-height: 30px;
         }
       }
       .contentHTML {
-        p {
-          margin: 0;
-        }
         color: white;
         font-size: 20px;
         font-weight: i.$main_font_weight_400;
-        // margin-top: -20px;
         @include i.media("<=tablet") {
           font-size: 15px;
           line-height: 20px;
         }
+        p {
+          margin: 0;
+        }
       }
     }
     .imagePart {
-      margin: 40px;
       position: relative;
       width: 30%;
+      margin: 40px;
 
       @include i.media("<=tablet") {
-        margin: 30px;
-        // width: 20%
         display: none;
+        margin: 30px;
       }
       @include i.media("<=phone") {
-        margin: 30px;
         display: block;
-        // width: 20%
-        // display: none;
+        margin: 30px;
       }
     }
   }

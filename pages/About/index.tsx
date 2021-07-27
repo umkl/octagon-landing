@@ -1,13 +1,9 @@
 import React from "react";
 import aboutStyles from "./about.module.scss";
 import utilStyles from "./../../styles/utils.module.scss";
-import Head from 'next/head';
+import Head from "next/head";
 
-interface Props {}
-
-function About(props: Props) {
-  const {} = props;
-
+function About() {
   return (
     <>
       <Head>

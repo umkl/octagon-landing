@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout.module.scss";
-import utilStyles from "../../styles/utils.module.scss";
-import Link from "next/link";
 import { Context, ReactNode, useState } from "react";
 import Footer from "../modules/footer";
 import Navbar from "../modules/navbar";

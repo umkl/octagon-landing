@@ -4,11 +4,14 @@ import OctagonLogo from "./../../assets/Logo/Octagon-logo-grayed.svg";
 import React from "react";
 import Link from "next/link";
 
-const footer = ({dark}:{dark:boolean}): JSX.Element => {
-  
-  
+const footer = ({ dark }: { dark: boolean }): JSX.Element => {
   return (
-    <footer className={`${dark ? footerStyle.darkBg: footerStyle.prBg} ${footerStyle.container}`} id="footer">
+    <footer
+      className={`${dark ? footerStyle.darkBg : footerStyle.prBg} ${
+        footerStyle.container
+      }`}
+      id="footer"
+    >
       <div className={footerStyle.innerContainer}>
         <SuperEllipse
           r1={0.00006}
@@ -22,7 +25,10 @@ const footer = ({dark}:{dark:boolean}): JSX.Element => {
           }}
         >
           <div className={footerStyle.content}>
-            <div className={footerStyle.blockheading}><br/>Contact</div>
+            <div className={footerStyle.blockheading}>
+              <br />
+              Contact
+            </div>
             <div className={footerStyle.block1}>
               <div className={footerStyle.half}>
                 <span>E: office@octagon.at</span>
@@ -86,26 +92,6 @@ const footer = ({dark}:{dark:boolean}): JSX.Element => {
           </div>
         </SuperEllipse>
       </div>
-
-      {/* <div
-      style={{
-        width: 200,
-        height: 200,
-        clipPath: `path('${svgPath}')`,
-      }}
-    >
-      ...
-    </div> */}
-      {/* <div className={footerStyle.innerContainer}>
-            </div> */}
-      {/* <SquircleView
-            squircleParams={{
-                cornerSmoothing: 0.7,
-                cornerRadius: 30,
-                fillColor: 'pink',
-            }}
-            children={{width: 200, height: 200}}
-            ></SquircleView> */}
     </footer>
   );
 };

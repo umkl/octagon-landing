@@ -1,7 +1,6 @@
 import utilStyles from "./../../styles/utils.module.scss";
 import Button from "../../components/elements/button";
 import styles from "./home.module.scss";
-import arrow from "./../../assets/Icons/arrow.svg";
 import HomeDetail from "../../components/elements/detail";
 import { NavbarHeightContext } from "../../components/layouts/layout";
 import { useContext, useEffect, useState } from "react";
@@ -23,12 +22,6 @@ const Home = (): JSX.Element => {
   useEffect(() => {
     setLoaded(true);
   }, []);
-
-  // const headingSpring1 = useSpring({
-  //   opacity: loaded ? 1 : 0,
-  //   marginLeft: loaded ? "0px" : "-400px",
-  //   config: { duration: 550 },
-  // });
 
   const headingSpring1 = useSpring({
     from: { opacity: 0, marginLeft:  "-400px"},

@@ -1,25 +1,15 @@
 @use './../../styles/abstracts' as i;
 
-
-// @include i.media(">=desktop") {
-// }
-
 .container {
+  position: relative;
   width: 100%;
-  @include i.media(">=desktop"){
+  height: 100%;
+  background-color: white;
+  @include i.centerX;
+  @include i.media(">=desktop") {
     width: 80%;
   }
-  height: 100%;
-
-  // max-width: 36rem;
-  @include i.centerX;
-  position:relative;
-  // padding: 0 1rem;
-  // margin: 3rem auto 6rem;
-  background-color: white; 
-} 
-
-
+}
 
 .header {
   display: flex;
@@ -27,9 +17,8 @@
   align-items: center;
 }
 
-
-.main{
-  @include i.media("<=small_phone"){
+.main {
+  @include i.media("<=small_phone") {
     width: i.$small_phone;
   }
 }

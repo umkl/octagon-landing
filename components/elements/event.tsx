@@ -1,6 +1,5 @@
 import eventStyles from "./event.module.scss";
 import React, { useState } from "react";
-import { getAllEventIds, getEventData } from "../../lib/events";
 import SuperEllipse from "react-superellipse";
 import utilStyles from "./../../styles/utils.module.scss";
 import Link from "next/link";
@@ -8,8 +7,6 @@ import MelloImage from "./../../assets/Illustrations/image-event-1-mello_live_mu
 import Date from "./date";
 import { useSpring, animated as a } from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
-
-// import { GetStaticPaths, GetStaticProps } from "next";
 
 interface IEvent {
   id: string;
@@ -20,7 +17,6 @@ interface IEvent {
 
 export const Event = (eventData: IEvent) => {
   const [isVisible, setVisible] = useState(false);
-
   const springProps = useSpring({
     opacity: isVisible ? 1 : 0,
     marginLeft: isVisible ? "0px" : "-500px",
@@ -69,20 +65,3 @@ export const Event = (eventData: IEvent) => {
 };
 
 export default Event;
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const paths = getAllEventIds();
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   const eventData = await getEventData(params.id as string);
-//   return {
-//     props: {
-//       eventData,
-//     },
-//   };
-// };

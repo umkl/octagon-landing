@@ -12,8 +12,7 @@ import useWindowSize, { Size } from "../../hooks/useWindowSize";
 import { useContext, useEffect, useRef, useState } from "react";
 import useResizeObserver from "./../../hooks/useObserver";
 import { NavActiveContext, NavbarHeightContext } from "./../layouts/layout";
-import SuperEllipse, { SuperEllipseImg } from "react-superellipse";
-import { Link as Link2, animateScroll as scroll } from "react-scroll";
+import { Link as Link2 } from "react-scroll";
 import Button from "./../elements/button";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -34,7 +33,7 @@ const Navbar = ({ dark }: ILayout): JSX.Element => {
   );
 
   const styles = useSpring({
-    opacity: isLoaded ? 1 : 0
+    opacity: isLoaded ? 1 : 0,
   });
 
   const heightCallback = () => {

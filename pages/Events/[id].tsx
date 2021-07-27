@@ -1,4 +1,3 @@
-import Layout from "../../components/layouts/layout";
 import { getAllEventIds, getEventData } from "../../lib/events";
 import Head from "next/head";
 import Date from "../../components/elements/date";
