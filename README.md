@@ -11,6 +11,16 @@
 
 > I also assume bash is being used
 
+### Execute the Google Drive Project
+
+Simply execute the following command in order to start the Webserver.
+
+```
+npm start
+```
+
+### Execute the Github Project(Production branch)
+
 Clone the GitHub repository with `git clone`.
 
 ```
@@ -25,7 +35,6 @@ For installing all necessary dependencies run:
 ```
 npm i
 ```
-
 
 For creating a production-version of the project run:
 
