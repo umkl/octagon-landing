@@ -36,6 +36,8 @@ For starting the server(production version):
 $ npm start
 ```
 
+Now the Project can be viewed on `port 3000.
+
 ## Further Project Details
 
 ### Design
