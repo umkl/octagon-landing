@@ -18,6 +18,12 @@ $ git clone https://github.com/ungarmichael/octagon-landing.git
 cd octagon-landing
 ```
 
+For installing all necessary dependencies run:
+
+```
+$ npm i
+```
+
 
 For creating a production-version of the project run:
 
