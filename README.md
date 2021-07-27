@@ -1,10 +1,7 @@
 
 <div align="center">
     <img alt="Octagon Logo" src="assets/Logo/Octagon-logo-poppins-1000BA-README.png" width="200"/>
-    <h1>Octagon-frontend</h1>
-    Landing-page for Octagon
-    <br/>
-    <br/>
+    <h1>Octagon-landing</h1>
 </div>
 
 
@@ -17,21 +14,31 @@
 Clone the GitHub repository with `git clone`.
 
 ```
-$ git clone https://github.com/ungarmichael/octagon-landing.git
+git clone https://github.com/ungarmichael/octagon-landing.git
+```
+```
 cd octagon-landing
+```
+
+For installing all necessary dependencies run:
+
+```
+npm i
 ```
 
 
 For creating a production-version of the project run:
 
 ```
-$ npm run build
+npm run build
 ```
 
 For starting the server(production version):
 ```
-$ npm start
+npm start
 ```
+
+Now the Project can be viewed on `http://localhost:3000`.
 
 ## Further Project Details
 
