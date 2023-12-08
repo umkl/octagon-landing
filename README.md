@@ -4,6 +4,7 @@
     <h1>Octagon-landing</h1>
 </div>
 
+> Disclaimer: This project is a submission for a parttime job as an Frontend Developer at VortexData. 
 
 ## Execute the Project
 
