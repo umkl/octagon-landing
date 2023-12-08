@@ -4,7 +4,7 @@
     <h1>Octagon-landing</h1>
 </div>
 
-> Disclaimer: This project is a submission for a parttime job as an Frontend Developer at VortexData. 
+> Disclaimer: This project is a submission for a parttime job as an Frontend Developer at VortexData - Thus the restaurant _Octagon_ is just fictional.
 
 ## Execute the Project
 
