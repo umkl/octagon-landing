@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Home from "./Home";
+import Home from "./home";
 
 export default function Index(): JSX.Element {
   return (
